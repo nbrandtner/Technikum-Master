@@ -1,0 +1,59 @@
+REQ-Notes Class1
+Developer-Lead
+Testing-Lead
+Voltcar Project-Lead
+Product Owner
+System Architect
+REQ-Engineer
+Accounting
+Senior Dev of the four old Systems
+Scrum Master
+Business Analyst
+
+
+Benachrichtigung wenn Alarm
+Einsatzkräfte je nach Art des Alarms (Feuer, Einbruch)
+Alarmanlage mit Videoüberwachung
+Ausschalten für gewissen Zeitraum
+Empfindlichkeit der Alarmanlage einstellen
+Manuell durch die App und in jedem Raum steuerbar
+Jede Person bekommt eine ID womit man sie stoppen kann (facial recognition)
+Fensterläden gehen zu bei Alarm
+Kompatibilität der Anlage
+Ohne Batterien funktional
+Skalierbarkeit des Systems
+24/7 Support für Anlage
+Empfindliche Bereiche des Hauses markieren
+Lightshow und Nebel wenn ausgelöst
+Anschalten nach einer bestimmten Uhrzeit
+GPS based einschalten der Anlage bei verlassen des Hauses 
+Lautstärke einstellbar
+Steuerbare Kameras
+Saugroboter im Attack Modus
+Bei auslösung wird mikrofon vom eigenen handy auf lautsprecher abgespielt
+
+1. OK
+2. OK
+3. OK
+4. OK
+5. OK
+6. OK
+7. OK
+8. OK
+9. OK
+10. OK
+11 Irrelevant
+12. OK
+13. NO
+14. Irrelevant
+15. Irrelevant
+16. OK
+
+
+Wichtig:
+Warum hast du dieses Requirement? - Requirements Rationale
+Wie wichtig ist das Requirement? - Requirements Priority
+Wie likely wird sich das Requirement verändern in der Zukunft? - Requirements Stability
+
+funktional vs nicht funktionale reqs
+geldabheben beim automaten beschreiben als usecase in dem template aus dem kurs
