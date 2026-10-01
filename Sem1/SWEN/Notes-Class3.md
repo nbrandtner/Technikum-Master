@@ -13,4 +13,5 @@ Clean Code: Kann ein nachfolger/mein zukünftiges Ich den Code verstehen?
 - SOLID (SRP, ORP, LSP, ISP, DIP)
 - Component Cohesion Principle
 
-### 
+### Gruppenübung in ocp-uebung ordner
+
