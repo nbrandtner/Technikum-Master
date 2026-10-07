@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 https://pmd.github.io/schema/report_2_0_0.xsd" version="7.17.0" timestamp="2026-10-07T19:24:19.934">
+<file name="F:\Technikum-Master\Sem1\SWE\Uebung3\docs\original\ReportGenerator.java">
+<violation beginline="7" endline="7" begincolumn="9" endcolumn="15" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="8" endline="8" begincolumn="37" endcolumn="59" rule="EmptyCatchBlock" ruleset="Error Prone" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
+Avoid empty catch blocks
+</violation>
+<violation beginline="11" endline="11" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="14" endline="14" begincolumn="17" endcolumn="23" rule="UseStringBufferForStringAppends" ruleset="Performance" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="17" endline="17" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="18" endline="18" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="19" endline="19" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="27" endline="27" begincolumn="17" endcolumn="20" rule="UseStringBufferForStringAppends" ruleset="Performance" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_performance.html#usestringbufferforstringappends" priority="3">
+Prefer StringBuilder (non-synchronized) or StringBuffer (synchronized) over += for concatenating strings
+</violation>
+<violation beginline="29" endline="29" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="30" endline="30" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="31" endline="31" begincolumn="13" endcolumn="19" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+<violation beginline="35" endline="35" begincolumn="9" endcolumn="15" rule="SystemPrintln" ruleset="Best Practices" class="ReportGenerator" method="generateReport" externalInfoUrl="https://docs.pmd-code.org/pmd-doc-7.17.0/pmd_rules_java_bestpractices.html#systemprintln" priority="2">
+Usage of System.out/err
+</violation>
+</file>
+</pmd>
