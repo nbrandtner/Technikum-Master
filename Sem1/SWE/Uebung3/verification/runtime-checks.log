@@ -1,0 +1,125 @@
+$ "C:\Program Files\Zulu\zulu-17\bin\javac.exe" -encoding UTF-8 -cp F:\Technikum-Master\Sem1\SWE\Uebung3\target\classes -d F:\Technikum-Master\Sem1\SWE\Uebung3\target\runtime-checks F:\Technikum-Master\Sem1\SWE\Uebung3\docs\original\ReportGenerator.java F:\Technikum-Master\Sem1\SWE\Uebung3\target\runtime-checks\SerializationProbe.java
+
+Exit code: 0
+STDOUT:
+
+STDERR:
+
+
+$ "C:\Program Files\Zulu\zulu-17\bin\java.exe" -cp F:\Technikum-Master\Sem1\SWE\Uebung3\target\runtime-checks;F:\Technikum-Master\Sem1\SWE\Uebung3\target\classes SerializationProbe F:\Technikum-Master\Sem1\SWE\Uebung3\target\runtime-checks
+
+Exit code: 0
+STDOUT:
+Starting report generation...
+Generating JSON report...
+{"status": "OK","count": "3","active": "true"}
+Sending report to monitoring system...
+Report sent!
+Starting report generation...
+Generating CSV report...
+status,OK
+count,3
+active,true
+
+Sending report to monitoring system...
+Report sent!
+Starting report generation...
+Generating JSON report...
+{"status": "OK","count": "3","active": "true","missing": "null"}
+Sending report to monitoring system...
+Report sent!
+Starting report generation...
+Generating CSV report...
+status,OK
+count,3
+active,true
+missing,null
+
+Sending report to monitoring system...
+Report sent!
+Starting report generation...
+Generating CSV report...
+
+Sending report to monitoring system...
+Report sent!
+Starting report generation...
+Generating JSON report...
+}
+Sending report to monitoring system...
+Report sent!
+Legacy comparison: 5 preserved outputs and 1 confirmed empty-JSON defect.
+
+STDERR:
+
+
+Independent Python json/csv round trips: PASS (6 fields; all 32 JSON controls, quotes, backslashes, CR/LF, Unicode, null, numeric and empty values).
+
+$ "C:\Program Files\Zulu\zulu-17\bin\java.exe" -jar target/exercise3-reporting-1.0.0.jar json
+
+Exit code: 0
+STDOUT:
+{"service": "reporting","status": "OK","count": "3"}
+STDERR:
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_started entries=3
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_started characters=52
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportApplication lambda$main$0
+INFO: event=monitoring_received mode=simulation
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_completed status=success
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_completed characters=52
+
+
+$ "C:\Program Files\Zulu\zulu-17\bin\java.exe" -jar target/exercise3-reporting-1.0.0.jar csv
+
+Exit code: 0
+STDOUT:
+service,reporting
+status,OK
+count,3
+
+STDERR:
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_started entries=3
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_started characters=36
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportApplication lambda$main$0
+INFO: event=monitoring_received mode=simulation
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_completed status=success
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_completed characters=36
+
+
+$ "C:\Program Files\Zulu\zulu-17\bin\java.exe" -jar target/exercise3-reporting-1.0.0.jar
+
+Exit code: 0
+STDOUT:
+{"service": "reporting","status": "OK","count": "3"}
+STDERR:
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_started entries=3
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_started characters=52
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportApplication lambda$main$0
+INFO: event=monitoring_received mode=simulation
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.MonitoringReportSender send
+INFO: event=monitoring_send_completed status=success
+Oct 07, 2026 7:24:27 PM at.ac.technikum.reporting.ReportGenerator generateReport
+INFO: event=report_generation_completed characters=52
+
+
+$ "C:\Program Files\Zulu\zulu-17\bin\java.exe" -jar target/exercise3-reporting-1.0.0.jar xml
+
+Exit code: 1
+STDOUT:
+
+STDERR:
+Exception in thread "main" java.lang.IllegalArgumentException: Unsupported report format: xml
+	at at.ac.technikum.reporting.ReportApplication.selectFormatter(ReportApplication.java:36)
+	at at.ac.technikum.reporting.ReportApplication.main(ReportApplication.java:21)
+
+
+Executable JAR demos: PASS (JSON, CSV, default JSON; unsupported XML rejected before delivery).

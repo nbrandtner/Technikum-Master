@@ -1,0 +1,16 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< at.ac.technikum:exercise3-reporting >-----------------
+[INFO] Building Exercise 3 - Reporting Refactoring 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- pmd:3.28.0:pmd (default-cli) @ exercise3-reporting ---
+[INFO] PMD version: 7.17.0
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.979 s
+[INFO] Finished at: 2026-10-07T19:22:52+02:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,995 @@
+{
+  "root": "F:\\Technikum-Master\\Sem1\\SWE\\Uebung3",
+  "files": [
+    {
+      "path": ".gitignore",
+      "status": "created",
+      "sha256": "3e632a93f502263d23fd4c2552b4fc2d5c5532dc25bfa9e4aa3e143b82d45cb7",
+      "bytes": 57
+    },
+    {
+      "path": ".idea/.gitignore",
+      "status": "preserved-external-ide-file",
+      "sha256": "1bfdece3645ed8ed356030f22cc2004dc3f401ff060ac3d24de811c3bcd82e16",
+      "bytes": 184
+    },
+    {
+      "path": ".idea/compiler.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "3c6645925e446717605f1cc7481bcd66f114eacc3a89badfd71691adca88dfa1",
+      "bytes": 742
+    },
+    {
+      "path": ".idea/copilot.data.migration.agent.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "4805746a1cdb6ef089ec7c0e198e13992034e08b83ed95122ed605ca99c39653",
+      "bytes": 195
+    },
+    {
+      "path": ".idea/copilot.data.migration.ask.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "4141162ea613208b5edb1247c22a4a65cd628315167af551cefa7ae42a2c4076",
+      "bytes": 193
+    },
+    {
+      "path": ".idea/copilot.data.migration.ask2agent.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "65753465e271eed78cc36dce8b8a00ed3c8fc75eeeb3e2b1fde04a51bcd786c6",
+      "bytes": 199
+    },
+    {
+      "path": ".idea/copilot.data.migration.edit.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "bb7a167dd77a22fb8fdfb5668df96453bbfb4dd99c0d499fc740b8e0bd73e30c",
+      "bytes": 194
+    },
+    {
+      "path": ".idea/discord.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "0f3216c34ac2703c55bb18b4661dfce5ec49d3708043d8c0aed1575f9c5606d8",
+      "bytes": 212
+    },
+    {
+      "path": ".idea/encodings.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "f55bcbec9c0be897c826033aa7f06455c469f9148325abefa86bba404274e1df",
+      "bytes": 267
+    },
+    {
+      "path": ".idea/jarRepositories.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "cc0f059f93a44575e2a909e9dd630777feb04ad028081d592d5906e8f588de3b",
+      "bytes": 864
+    },
+    {
+      "path": ".idea/misc.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "508c81b23fcd70090eeb263e8140fc36a11b27075e7d47029d25022d9a64f0c4",
+      "bytes": 486
+    },
+    {
+      "path": ".idea/vcs.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "ded400540d88aa359788c096f4fdc16c47daa077930d4da4d3cda91fdc1f0cca",
+      "bytes": 194
+    },
+    {
+      "path": ".idea/workspace.xml",
+      "status": "preserved-external-ide-file",
+      "sha256": "bb9d16aa96ed93ad396ca0f18b7b46b55963924ec1c5d9b83bd12b997397e079",
+      "bytes": 788
+    },
+    {
+      "path": "Class 3 - Assignment-SWEN.pdf",
+      "status": "preserved",
+      "sha256": "17fba0257ea8458f552b3a5cc96d870f1e988ac7245b9027c4228aef3b2ed637",
+      "bytes": 4198964
+    },
+    {
+      "path": "Exercise3_Summary.md",
+      "status": "created",
+      "sha256": "26faef3fe91474f037f29e0b3ebe37068e021665047180f1aa594a2be0403fa5",
+      "bytes": 2896
+    },
+    {
+      "path": "Exercise3_Summary.pdf",
+      "status": "created",
+      "sha256": "c8c15ac0680ddcfb96975ce8ae14aa96a2c62ec2edaf10175008f28d65891df4",
+      "bytes": 4343
+    },
+    {
+      "path": "Exercise3_Summary_Updated.pdf",
+      "status": "created",
+      "sha256": "e5c0d9f2623baad3020af50067d4946f5764265e890278baa7051e77cabad334",
+      "bytes": 4413
+    },
+    {
+      "path": "README.md",
+      "status": "created",
+      "sha256": "21f683c96c9bbdf1dcb4f746dc514939c95e7af88be5be7e286fd0db3bfa2a93",
+      "bytes": 5211
+    },
+    {
+      "path": "config/pmd-ruleset.xml",
+      "status": "created",
+      "sha256": "0fdef7894e84ee5f78f6ad95a7050167dad274b8cbf7381367bb666110f05ac1",
+      "bytes": 1849
+    },
+    {
+      "path": "docs/Analysis.md",
+      "status": "created",
+      "sha256": "994bd53ac11840799ee70f66dae69dc6877456a07e85ad9270197e2b78dcd251",
+      "bytes": 2731
+    },
+    {
+      "path": "docs/Architecture.md",
+      "status": "created",
+      "sha256": "e64fae4d52337278c0fe839140412cdf1cdabc19b38e5fd87ea5fee6ce656813",
+      "bytes": 3111
+    },
+    {
+      "path": "docs/Review.md",
+      "status": "created",
+      "sha256": "27298d9063b8b3d1805df74b090adc46f459d99e7efbc8ecb6399d46a7bb41ae",
+      "bytes": 2245
+    },
+    {
+      "path": "docs/original/ReportGenerator.java",
+      "status": "created",
+      "sha256": "00224df7de13338a44433339eda071512c7a85b8bea28f401552369efda78a12",
+      "bytes": 1465
+    },
+    {
+      "path": "pom.xml",
+      "status": "created",
+      "sha256": "6203fabe88db63aa2409642e5d4d471c7b6038060361ea1c6f8df8182a1bf0ef",
+      "bytes": 4334
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/CsvReportFormatter.java",
+      "status": "created",
+      "sha256": "faa7b98c256dc9e5621ea918fc83e702bdf92e025ec99560794b587503fb42f1",
+      "bytes": 1069
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/JsonReportFormatter.java",
+      "status": "created",
+      "sha256": "de017c552ca4135733c42915fab4b9a90e85940dd5a10f12c51cd38d9581ffb4",
+      "bytes": 1508
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/MonitoringReportSender.java",
+      "status": "created",
+      "sha256": "f7dcbfa071cc0cb7efb6f733d914b64971dc020d73da3787e928f28323f84026",
+      "bytes": 949
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/ReportApplication.java",
+      "status": "created",
+      "sha256": "7d5fd56d5184128eb3ac3a8518f6d678f1b89d9c347f41863077623ce78b8c4b",
+      "bytes": 1604
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/ReportFormatter.java",
+      "status": "created",
+      "sha256": "220edd559f503caaa0889d82462426666ff3a86b7d313029c02a472c3bcf92ac",
+      "bytes": 601
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/ReportGenerator.java",
+      "status": "created",
+      "sha256": "a314c85d0f03ee4e10f6ecb78b0b2e39b564a82362ad184cbdb81e8af367b4c3",
+      "bytes": 1888
+    },
+    {
+      "path": "src/main/java/at/ac/technikum/reporting/ReportSender.java",
+      "status": "created",
+      "sha256": "4fb2b672b62e2e9f07485e99ee4667008c5d3fe5c17e6680c5c2cca9f47aa20b",
+      "bytes": 416
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/CsvReportFormatterTest.java",
+      "status": "created",
+      "sha256": "80c2514fe5269d0ef1a046904c35cf5cf2f5bada2abeefbc7f642d9ca22ca85a",
+      "bytes": 2478
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/JsonReportFormatterTest.java",
+      "status": "created",
+      "sha256": "e77b2c401bdb68fb448836df07a1069896ef5f624fc3c7041c834fb487b88925",
+      "bytes": 2704
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/LogCapture.java",
+      "status": "created",
+      "sha256": "7df71cc99b7ac929a23db238bd012f51e9739707230b4aff9611ec4b59768ce8",
+      "bytes": 1252
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/MonitoringReportSenderTest.java",
+      "status": "created",
+      "sha256": "95d0c1cbf63d3226a519c76ef1dd51a6618d84e9b12fafc54bf5501caf517eef",
+      "bytes": 2356
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/ReportApplicationTest.java",
+      "status": "created",
+      "sha256": "822146e1f867162e30443b7d4901f404c5e2ce43fc04aa11d44b6f3b9e1dd2aa",
+      "bytes": 513
+    },
+    {
+      "path": "src/test/java/at/ac/technikum/reporting/ReportGeneratorTest.java",
+      "status": "created",
+      "sha256": "6b262ed02b61cd7459618584e786a8aa455f72779a5a35f3cc81c04d192196df",
+      "bytes": 6088
+    },
+    {
+      "path": "target/baseline/pmd.xml",
+      "status": "created",
+      "sha256": "d6c773ae06b71f6a5005ef79a3093a116f6c0b8d4c1e9bef413669013c3d093e",
+      "bytes": 4868
+    },
+    {
+      "path": "target/baseline/reports/css/apache-maven-fluido-2.0.0-M9.min.css",
+      "status": "created",
+      "sha256": "43f9dccc39e0f2e800cbbc23649191dce8e80972f8e88f1346ff8d219672ed97",
+      "bytes": 128470
+    },
+    {
+      "path": "target/baseline/reports/css/print.css",
+      "status": "created",
+      "sha256": "a5a7946a24056e7c81a330a55137175715c850fa07b520f518676c1982552a9b",
+      "bytes": 1064
+    },
+    {
+      "path": "target/baseline/reports/css/site.css",
+      "status": "created",
+      "sha256": "d079d0324d331c08fea5533e5f9e7a4f533099f8916815ffbe115ab0b5524ba6",
+      "bytes": 53
+    },
+    {
+      "path": "target/baseline/reports/fonts/glyphicons-halflings-regular.eot",
+      "status": "created",
+      "sha256": "62fcbc4796f99217282f30c654764f572d9bfd9df7de9ce1e37922fa3caf8124",
+      "bytes": 20290
+    },
+    {
+      "path": "target/baseline/reports/fonts/glyphicons-halflings-regular.svg",
+      "status": "created",
+      "sha256": "0b12aba182a43da34d79361168a665a0ec78a6a79169a730ca96b7cf696cd7c4",
+      "bytes": 63078
+    },
+    {
+      "path": "target/baseline/reports/fonts/glyphicons-halflings-regular.ttf",
+      "status": "created",
+      "sha256": "e27b969ef04fed3b39000b7b977e602d6e6a2b1c8c0d618bebf6dd875243ea3c",
+      "bytes": 41236
+    },
+    {
+      "path": "target/baseline/reports/fonts/glyphicons-halflings-regular.woff",
+      "status": "created",
+      "sha256": "63faf0af44a428f182686f0d924bb30e369a9549630c7b98a969394f58431067",
+      "bytes": 23292
+    },
+    {
+      "path": "target/baseline/reports/images/accessories-text-editor.png",
+      "status": "created",
+      "sha256": "7fe8b358b119f929abe720f8eac82c895bbb0cfbc86fa94525a496ab938b4527",
+      "bytes": 746
+    },
+    {
+      "path": "target/baseline/reports/images/add.gif",
+      "status": "created",
+      "sha256": "aa3248f01d1c9a614f98e37a0946acc5bc9811df2f24d7e3859f1777e91ff980",
+      "bytes": 397
+    },
+    {
+      "path": "target/baseline/reports/images/apache-maven-project-2.png",
+      "status": "created",
+      "sha256": "e544ec0d5313fd3bdfb4af4b760cb7b5bc5706cf0ff2c1d1367fb8c1f86e5c46",
+      "bytes": 43073
+    },
+    {
+      "path": "target/baseline/reports/images/application-certificate.png",
+      "status": "created",
+      "sha256": "cf846cb9c13823d3513a853b3ff65bda80a16b5ad4de3ce4e40bb020e4521c02",
+      "bytes": 923
+    },
+    {
+      "path": "target/baseline/reports/images/contact-new.png",
+      "status": "created",
+      "sha256": "61babfb19a878ebfc50c3359dffc5c6666fa1ab0d9dbe990a5f0c6707ebdefca",
+      "bytes": 736
+    },
+    {
+      "path": "target/baseline/reports/images/document-properties.png",
+      "status": "created",
+      "sha256": "7697ddf62a159a1c0755d8f10d4b86af406f342613f7ea7ddd16f08668a98e35",
+      "bytes": 577
+    },
+    {
+      "path": "target/baseline/reports/images/drive-harddisk.png",
+      "status": "created",
+      "sha256": "133bdaab12c3796d27913e025468f531ae188deb9d95bd073d29a0735de4e684",
+      "bytes": 700
+    },
+    {
+      "path": "target/baseline/reports/images/fix.gif",
+      "status": "created",
+      "sha256": "0aeedbf7ba5c6c4e0b6ab35d424773a28d54941fa99604f80d4075c9abaeb36c",
+      "bytes": 366
+    },
+    {
+      "path": "target/baseline/reports/images/icon_error_sml.gif",
+      "status": "created",
+      "sha256": "94be70125b079d0f7bc31f1d9870b549b07ed78d14585f89a23bdce976b72bce",
+      "bytes": 633
+    },
+    {
+      "path": "target/baseline/reports/images/icon_help_sml.gif",
+      "status": "created",
+      "sha256": "91f660b352cd044b2985a6f05ed24fe447268f84946626c5f4d6dd4d1a22a48a",
+      "bytes": 1072
+    },
+    {
+      "path": "target/baseline/reports/images/icon_info_sml.gif",
+      "status": "created",
+      "sha256": "bc90e0954a409e610d7120ee7d893362a269249a14e90be7bc99b51a84d8e93b",
+      "bytes": 638
+    },
+    {
+      "path": "target/baseline/reports/images/icon_success_sml.gif",
+      "status": "created",
+      "sha256": "80f89c55c118e47605857975f235a7852c9b9714281f48c3e53baff3e89e261c",
+      "bytes": 604
+    },
+    {
+      "path": "target/baseline/reports/images/icon_warning_sml.gif",
+      "status": "created",
+      "sha256": "a28a3f9b2cb61ff89b53529eeb5d574d4a0f9e199565d67b88f30458b201d419",
+      "bytes": 625
+    },
+    {
+      "path": "target/baseline/reports/images/image-x-generic.png",
+      "status": "created",
+      "sha256": "4961d5bd00e3c5b89cac67e6565a2bf1d4096fd5f545029e285cb836efb94f56",
+      "bytes": 662
+    },
+    {
+      "path": "target/baseline/reports/images/internet-web-browser.png",
+      "status": "created",
+      "sha256": "b400d4c9826f13ecf6d185e9c23a9fdb77aceab5d29956d236a1ae779f66c433",
+      "bytes": 1017
+    },
+    {
+      "path": "target/baseline/reports/images/logos/build-by-maven-black.png",
+      "status": "created",
+      "sha256": "d43d52ba554fc85e370a97f54d1c6cdc7ef80b68a8a65f717ebd8e161979e21a",
+      "bytes": 2294
+    },
+    {
+      "path": "target/baseline/reports/images/logos/build-by-maven-white.png",
+      "status": "created",
+      "sha256": "03a5174b45a4d1c4a54d351c5264b56de0be17abd29ef413beee651592367fd4",
+      "bytes": 2260
+    },
+    {
+      "path": "target/baseline/reports/images/logos/maven-feather.png",
+      "status": "created",
+      "sha256": "656853b75a5dabf0954050196804fa3ac6ad8d9c662c3ae0ca50e6a0cffcc299",
+      "bytes": 3330
+    },
+    {
+      "path": "target/baseline/reports/images/network-server.png",
+      "status": "created",
+      "sha256": "e9b9def97f775ab5127fad1b82ae2dc033312d1082a18eeb68705d7e5d9879dc",
+      "bytes": 536
+    },
+    {
+      "path": "target/baseline/reports/images/package-x-generic.png",
+      "status": "created",
+      "sha256": "3e9045ca09cd828879e769ba8a3efa847c3ae3afe9d072491fe140cde445b416",
+      "bytes": 717
+    },
+    {
+      "path": "target/baseline/reports/images/profiles/pre-release.png",
+      "status": "created",
+      "sha256": "83e78edc2886d08d48fff27d1661422edd63a930cfaa9e9100c4c3ca3fd3bb4b",
+      "bytes": 32607
+    },
+    {
+      "path": "target/baseline/reports/images/profiles/retired.png",
+      "status": "created",
+      "sha256": "62d959dd0244477eca26e8f6d7e2d65e463009ef0d1e77a679fb20cdc77e3261",
+      "bytes": 22003
+    },
+    {
+      "path": "target/baseline/reports/images/profiles/sandbox.png",
+      "status": "created",
+      "sha256": "244012cf3881ce760b4bb2df08e5c084ecc20e6f62c8497ba48e5a18925564e1",
+      "bytes": 33010
+    },
+    {
+      "path": "target/baseline/reports/images/remove.gif",
+      "status": "created",
+      "sha256": "3e34db440ad9201f16a36cb44494a9be4066cf7edb68c7f6bd13b767148799c0",
+      "bytes": 607
+    },
+    {
+      "path": "target/baseline/reports/images/rss.png",
+      "status": "created",
+      "sha256": "c1cf05b2eeb50cc3f142ae0fee8557b6dd39797948445caed07d438c3a2550eb",
+      "bytes": 474
+    },
+    {
+      "path": "target/baseline/reports/images/update.gif",
+      "status": "created",
+      "sha256": "60096763883104398fc17066a93928fdacdb87ae4e2bd858b7c0b17a820ecccd",
+      "bytes": 1090
+    },
+    {
+      "path": "target/baseline/reports/images/window-new.png",
+      "status": "created",
+      "sha256": "30d30698359fbac1ac00d9fa1fbb6c92e71a03ea99ff2e21a2176d7f584a6ac1",
+      "bytes": 583
+    },
+    {
+      "path": "target/baseline/reports/img/glyphicons-halflings-white.png",
+      "status": "created",
+      "sha256": "f0e0d95a9c8abcdfabf46348e2d4285829bb0491f5f6af0e05af52bffb6324c4",
+      "bytes": 8777
+    },
+    {
+      "path": "target/baseline/reports/img/glyphicons-halflings.png",
+      "status": "created",
+      "sha256": "d99e3fa32c641032f08149914b28c2dc6acf2ec62f70987f2259eabbfa7fc0de",
+      "bytes": 12799
+    },
+    {
+      "path": "target/baseline/reports/js/apache-maven-fluido-2.0.0-M9.min.js",
+      "status": "created",
+      "sha256": "b966ba4111d9a237e4cf5c56203d1acc2f126199346170aef5f98310ce8d835e",
+      "bytes": 145082
+    },
+    {
+      "path": "target/baseline/reports/pmd.html",
+      "status": "created",
+      "sha256": "aa3e51a5bc10691c660a6e03e12e433e288f1079ddb55f4ba5f970ca02581e07",
+      "bytes": 9314
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/CsvReportFormatter.class",
+      "status": "created",
+      "sha256": "e08a23c4ae81cd4cadc15e1241564d7c5c2041828500a847766d5d2fb6747289",
+      "bytes": 2565
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/JsonReportFormatter.class",
+      "status": "created",
+      "sha256": "406eb116dcc9b9edebf4951502dfbad8f66d9581545463e2219ee9984db0b951",
+      "bytes": 3221
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/MonitoringReportSender.class",
+      "status": "created",
+      "sha256": "284fc19f7fab6af0406b0f6187db30642605825867b4ca25dc418ca4c3ad1d72",
+      "bytes": 1801
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/ReportApplication.class",
+      "status": "created",
+      "sha256": "4c47f36ff31cd3a6198e1b38afc9bcc54999b74143cbb15f5c0f99952d03ff75",
+      "bytes": 3647
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/ReportFormatter.class",
+      "status": "created",
+      "sha256": "f8fec8bc62b9a3ef2773eafdcb1f7f8048883998f86924e0d8356abdd5786105",
+      "bytes": 362
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/ReportGenerator.class",
+      "status": "created",
+      "sha256": "ab665b2f5115c092f5996f45040b3b38e136d7a89fa5d01573a5a7cc66c7cbfd",
+      "bytes": 2948
+    },
+    {
+      "path": "target/classes/at/ac/technikum/reporting/ReportSender.class",
+      "status": "created",
+      "sha256": "11cec9318ffebf2e4791654ff6ddb28ba0078cd1da2d3fe74947c95fc2ab49e2",
+      "bytes": 244
+    },
+    {
+      "path": "target/exercise3-reporting-1.0.0.jar",
+      "status": "created",
+      "sha256": "89428c018816fd00e63c54c69b6bcd9d1e97a6217e137f6e2d6153858f8d2f6d",
+      "bytes": 10971
+    },
+    {
+      "path": "target/maven-archiver/pom.properties",
+      "status": "created",
+      "sha256": "81ed0013d8515f918a019dff3d0af06d241c4e73218425f711d8f86d18eab712",
+      "bytes": 72
+    },
+    {
+      "path": "target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst",
+      "status": "created",
+      "sha256": "9b3d1f30a3c23d84e0f6d0a612e1d92de0c50462602594a8725d92e191889629",
+      "bytes": 349
+    },
+    {
+      "path": "target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst",
+      "status": "created",
+      "sha256": "034638f30e1c8600dd2ee79908b2aa6a3c70dd21f407b1ae37f3997a46bbe6fa",
+      "bytes": 706
+    },
+    {
+      "path": "target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst",
+      "status": "created",
+      "sha256": "9be23792d1da478b5f07ba6e0b415d0492014e5d05935d47e95f51ff9bf4c312",
+      "bytes": 319
+    },
+    {
+      "path": "target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst",
+      "status": "created",
+      "sha256": "7f840b2cb26d84fdc6fdf37ab3abcfc19755278929b4f2d66ad269bf7ae7c94b",
+      "bytes": 625
+    },
+    {
+      "path": "target/pmd.xml",
+      "status": "created",
+      "sha256": "5463d49b97c3c6a5212e6d503b3a923141cdae87ec340d6c7341540c42a4e8f0",
+      "bytes": 550
+    },
+    {
+      "path": "target/pmd/rulesets/001-pmd-ruleset.xml",
+      "status": "created",
+      "sha256": "0fdef7894e84ee5f78f6ad95a7050167dad274b8cbf7381367bb666110f05ac1",
+      "bytes": 1849
+    },
+    {
+      "path": "target/reports/css/apache-maven-fluido-2.0.0-M9.min.css",
+      "status": "created",
+      "sha256": "43f9dccc39e0f2e800cbbc23649191dce8e80972f8e88f1346ff8d219672ed97",
+      "bytes": 128470
+    },
+    {
+      "path": "target/reports/css/print.css",
+      "status": "created",
+      "sha256": "a5a7946a24056e7c81a330a55137175715c850fa07b520f518676c1982552a9b",
+      "bytes": 1064
+    },
+    {
+      "path": "target/reports/css/site.css",
+      "status": "created",
+      "sha256": "d079d0324d331c08fea5533e5f9e7a4f533099f8916815ffbe115ab0b5524ba6",
+      "bytes": 53
+    },
+    {
+      "path": "target/reports/fonts/glyphicons-halflings-regular.eot",
+      "status": "created",
+      "sha256": "62fcbc4796f99217282f30c654764f572d9bfd9df7de9ce1e37922fa3caf8124",
+      "bytes": 20290
+    },
+    {
+      "path": "target/reports/fonts/glyphicons-halflings-regular.svg",
+      "status": "created",
+      "sha256": "0b12aba182a43da34d79361168a665a0ec78a6a79169a730ca96b7cf696cd7c4",
+      "bytes": 63078
+    },
+    {
+      "path": "target/reports/fonts/glyphicons-halflings-regular.ttf",
+      "status": "created",
+      "sha256": "e27b969ef04fed3b39000b7b977e602d6e6a2b1c8c0d618bebf6dd875243ea3c",
+      "bytes": 41236
+    },
+    {
+      "path": "target/reports/fonts/glyphicons-halflings-regular.woff",
+      "status": "created",
+      "sha256": "63faf0af44a428f182686f0d924bb30e369a9549630c7b98a969394f58431067",
+      "bytes": 23292
+    },
+    {
+      "path": "target/reports/images/accessories-text-editor.png",
+      "status": "created",
+      "sha256": "7fe8b358b119f929abe720f8eac82c895bbb0cfbc86fa94525a496ab938b4527",
+      "bytes": 746
+    },
+    {
+      "path": "target/reports/images/add.gif",
+      "status": "created",
+      "sha256": "aa3248f01d1c9a614f98e37a0946acc5bc9811df2f24d7e3859f1777e91ff980",
+      "bytes": 397
+    },
+    {
+      "path": "target/reports/images/apache-maven-project-2.png",
+      "status": "created",
+      "sha256": "e544ec0d5313fd3bdfb4af4b760cb7b5bc5706cf0ff2c1d1367fb8c1f86e5c46",
+      "bytes": 43073
+    },
+    {
+      "path": "target/reports/images/application-certificate.png",
+      "status": "created",
+      "sha256": "cf846cb9c13823d3513a853b3ff65bda80a16b5ad4de3ce4e40bb020e4521c02",
+      "bytes": 923
+    },
+    {
+      "path": "target/reports/images/contact-new.png",
+      "status": "created",
+      "sha256": "61babfb19a878ebfc50c3359dffc5c6666fa1ab0d9dbe990a5f0c6707ebdefca",
+      "bytes": 736
+    },
+    {
+      "path": "target/reports/images/document-properties.png",
+      "status": "created",
+      "sha256": "7697ddf62a159a1c0755d8f10d4b86af406f342613f7ea7ddd16f08668a98e35",
+      "bytes": 577
+    },
+    {
+      "path": "target/reports/images/drive-harddisk.png",
+      "status": "created",
+      "sha256": "133bdaab12c3796d27913e025468f531ae188deb9d95bd073d29a0735de4e684",
+      "bytes": 700
+    },
+    {
+      "path": "target/reports/images/fix.gif",
+      "status": "created",
+      "sha256": "0aeedbf7ba5c6c4e0b6ab35d424773a28d54941fa99604f80d4075c9abaeb36c",
+      "bytes": 366
+    },
+    {
+      "path": "target/reports/images/icon_error_sml.gif",
+      "status": "created",
+      "sha256": "94be70125b079d0f7bc31f1d9870b549b07ed78d14585f89a23bdce976b72bce",
+      "bytes": 633
+    },
+    {
+      "path": "target/reports/images/icon_help_sml.gif",
+      "status": "created",
+      "sha256": "91f660b352cd044b2985a6f05ed24fe447268f84946626c5f4d6dd4d1a22a48a",
+      "bytes": 1072
+    },
+    {
+      "path": "target/reports/images/icon_info_sml.gif",
+      "status": "created",
+      "sha256": "bc90e0954a409e610d7120ee7d893362a269249a14e90be7bc99b51a84d8e93b",
+      "bytes": 638
+    },
+    {
+      "path": "target/reports/images/icon_success_sml.gif",
+      "status": "created",
+      "sha256": "80f89c55c118e47605857975f235a7852c9b9714281f48c3e53baff3e89e261c",
+      "bytes": 604
+    },
+    {
+      "path": "target/reports/images/icon_warning_sml.gif",
+      "status": "created",
+      "sha256": "a28a3f9b2cb61ff89b53529eeb5d574d4a0f9e199565d67b88f30458b201d419",
+      "bytes": 625
+    },
+    {
+      "path": "target/reports/images/image-x-generic.png",
+      "status": "created",
+      "sha256": "4961d5bd00e3c5b89cac67e6565a2bf1d4096fd5f545029e285cb836efb94f56",
+      "bytes": 662
+    },
+    {
+      "path": "target/reports/images/internet-web-browser.png",
+      "status": "created",
+      "sha256": "b400d4c9826f13ecf6d185e9c23a9fdb77aceab5d29956d236a1ae779f66c433",
+      "bytes": 1017
+    },
+    {
+      "path": "target/reports/images/logos/build-by-maven-black.png",
+      "status": "created",
+      "sha256": "d43d52ba554fc85e370a97f54d1c6cdc7ef80b68a8a65f717ebd8e161979e21a",
+      "bytes": 2294
+    },
+    {
+      "path": "target/reports/images/logos/build-by-maven-white.png",
+      "status": "created",
+      "sha256": "03a5174b45a4d1c4a54d351c5264b56de0be17abd29ef413beee651592367fd4",
+      "bytes": 2260
+    },
+    {
+      "path": "target/reports/images/logos/maven-feather.png",
+      "status": "created",
+      "sha256": "656853b75a5dabf0954050196804fa3ac6ad8d9c662c3ae0ca50e6a0cffcc299",
+      "bytes": 3330
+    },
+    {
+      "path": "target/reports/images/network-server.png",
+      "status": "created",
+      "sha256": "e9b9def97f775ab5127fad1b82ae2dc033312d1082a18eeb68705d7e5d9879dc",
+      "bytes": 536
+    },
+    {
+      "path": "target/reports/images/package-x-generic.png",
+      "status": "created",
+      "sha256": "3e9045ca09cd828879e769ba8a3efa847c3ae3afe9d072491fe140cde445b416",
+      "bytes": 717
+    },
+    {
+      "path": "target/reports/images/profiles/pre-release.png",
+      "status": "created",
+      "sha256": "83e78edc2886d08d48fff27d1661422edd63a930cfaa9e9100c4c3ca3fd3bb4b",
+      "bytes": 32607
+    },
+    {
+      "path": "target/reports/images/profiles/retired.png",
+      "status": "created",
+      "sha256": "62d959dd0244477eca26e8f6d7e2d65e463009ef0d1e77a679fb20cdc77e3261",
+      "bytes": 22003
+    },
+    {
+      "path": "target/reports/images/profiles/sandbox.png",
+      "status": "created",
+      "sha256": "244012cf3881ce760b4bb2df08e5c084ecc20e6f62c8497ba48e5a18925564e1",
+      "bytes": 33010
+    },
+    {
+      "path": "target/reports/images/remove.gif",
+      "status": "created",
+      "sha256": "3e34db440ad9201f16a36cb44494a9be4066cf7edb68c7f6bd13b767148799c0",
+      "bytes": 607
+    },
+    {
+      "path": "target/reports/images/rss.png",
+      "status": "created",
+      "sha256": "c1cf05b2eeb50cc3f142ae0fee8557b6dd39797948445caed07d438c3a2550eb",
+      "bytes": 474
+    },
+    {
+      "path": "target/reports/images/update.gif",
+      "status": "created",
+      "sha256": "60096763883104398fc17066a93928fdacdb87ae4e2bd858b7c0b17a820ecccd",
+      "bytes": 1090
+    },
+    {
+      "path": "target/reports/images/window-new.png",
+      "status": "created",
+      "sha256": "30d30698359fbac1ac00d9fa1fbb6c92e71a03ea99ff2e21a2176d7f584a6ac1",
+      "bytes": 583
+    },
+    {
+      "path": "target/reports/img/glyphicons-halflings-white.png",
+      "status": "created",
+      "sha256": "f0e0d95a9c8abcdfabf46348e2d4285829bb0491f5f6af0e05af52bffb6324c4",
+      "bytes": 8777
+    },
+    {
+      "path": "target/reports/img/glyphicons-halflings.png",
+      "status": "created",
+      "sha256": "d99e3fa32c641032f08149914b28c2dc6acf2ec62f70987f2259eabbfa7fc0de",
+      "bytes": 12799
+    },
+    {
+      "path": "target/reports/js/apache-maven-fluido-2.0.0-M9.min.js",
+      "status": "created",
+      "sha256": "b966ba4111d9a237e4cf5c56203d1acc2f126199346170aef5f98310ce8d835e",
+      "bytes": 145082
+    },
+    {
+      "path": "target/reports/pmd.html",
+      "status": "created",
+      "sha256": "09c5f871eec33bf70016dce66fb9d840e10df64b2b130afcd4be2a7fb9f0b7be",
+      "bytes": 2641
+    },
+    {
+      "path": "target/runtime-checks/ReportGenerator.class",
+      "status": "created",
+      "sha256": "0e2184e0719769cf13ddb17cdc2e293047ba5fe9e357ee625c898b52856e0694",
+      "bytes": 2307
+    },
+    {
+      "path": "target/runtime-checks/SerializationProbe.class",
+      "status": "created",
+      "sha256": "747c4249d6ef9424c6d2ceaf4dace9047f4864cc60dc4fb29c7ad6637a57dabd",
+      "bytes": 2641
+    },
+    {
+      "path": "target/runtime-checks/SerializationProbe.java",
+      "status": "created",
+      "sha256": "71187feb12903f79b45dc3da45f7d22b8b62f2b99ce1057fa9ec279a702b12ed",
+      "bytes": 2278
+    },
+    {
+      "path": "target/runtime-checks/special.csv",
+      "status": "created",
+      "sha256": "5cc1c8c93cf148f3b52815f02d26d0035e3aa8e530dc2daee039fd29fcd0ebaa",
+      "bytes": 125
+    },
+    {
+      "path": "target/runtime-checks/special.json",
+      "status": "created",
+      "sha256": "a99d28b245f1b9f994575c24138ab5c6f6836e9042460061cdb29e7451b13908",
+      "bytes": 334
+    },
+    {
+      "path": "target/surefire-reports/2026-10-07T19-21-09_887.dumpstream",
+      "status": "created",
+      "sha256": "5c91ee39bbf4ea9b03cb1b2c07481cc43e192f552502dc74abe9f4fa4482593c",
+      "bytes": 262
+    },
+    {
+      "path": "target/surefire-reports/2026-10-07T19-22-10_679.dumpstream",
+      "status": "created",
+      "sha256": "fa623de2186c65febf9c05c6b64a586e8f3b992ab0739013aab4bff2b30cc775",
+      "bytes": 262
+    },
+    {
+      "path": "target/surefire-reports/2026-10-07T19-24-12_133.dumpstream",
+      "status": "created",
+      "sha256": "8d648bf47f82bffa3be820e694bf15ab8135429ebf745c7e4ce4a326defea0ea",
+      "bytes": 262
+    },
+    {
+      "path": "target/surefire-reports/TEST-at.ac.technikum.reporting.CsvReportFormatterTest.xml",
+      "status": "created",
+      "sha256": "e785a8df3389a128dcd9e98cd3b0ce1067e36d5a6f8e9a2b6893518a90ffb6a5",
+      "bytes": 10488
+    },
+    {
+      "path": "target/surefire-reports/TEST-at.ac.technikum.reporting.JsonReportFormatterTest.xml",
+      "status": "created",
+      "sha256": "41e17e4bfb339e655bb410d11656c8b255cc82a83e5dc18352906805e79a45be",
+      "bytes": 10921
+    },
+    {
+      "path": "target/surefire-reports/TEST-at.ac.technikum.reporting.MonitoringReportSenderTest.xml",
+      "status": "created",
+      "sha256": "230395f9773b6f670f06ac1940497ce6b7e5c40c6a783f0066629cbd46fedefc",
+      "bytes": 9784
+    },
+    {
+      "path": "target/surefire-reports/TEST-at.ac.technikum.reporting.ReportApplicationTest.xml",
+      "status": "created",
+      "sha256": "1396fad5e91e8c32dc046b778421c3f51cfa677e81141df7bbb2766256aa7ceb",
+      "bytes": 9052
+    },
+    {
+      "path": "target/surefire-reports/TEST-at.ac.technikum.reporting.ReportGeneratorTest.xml",
+      "status": "created",
+      "sha256": "9799802ec216eda95b8fabc9592674fcf68337040584dd3af931586bec966ed8",
+      "bytes": 20705
+    },
+    {
+      "path": "target/surefire-reports/at.ac.technikum.reporting.CsvReportFormatterTest.txt",
+      "status": "created",
+      "sha256": "b38b22167796e8d5d84f62121531e6139010bdc1af6779216111a69edd370421",
+      "bytes": 351
+    },
+    {
+      "path": "target/surefire-reports/at.ac.technikum.reporting.JsonReportFormatterTest.txt",
+      "status": "created",
+      "sha256": "2d9f6e467c79925434a054e43a6323fe97470b7711dab0d986389452e446b69e",
+      "bytes": 353
+    },
+    {
+      "path": "target/surefire-reports/at.ac.technikum.reporting.MonitoringReportSenderTest.txt",
+      "status": "created",
+      "sha256": "f3964c0ddc77140a433f86876c9f2e047aa73925bfa52a09554e554fe7ccaa14",
+      "bytes": 358
+    },
+    {
+      "path": "target/surefire-reports/at.ac.technikum.reporting.ReportApplicationTest.txt",
+      "status": "created",
+      "sha256": "7c588344830f582263a958fac0141b79c245c797fdb0d625e4a49e1ce6a5aef7",
+      "bytes": 348
+    },
+    {
+      "path": "target/surefire-reports/at.ac.technikum.reporting.ReportGeneratorTest.txt",
+      "status": "created",
+      "sha256": "5637c9ada80022dfdd8c5e5aa455e46423e79d0e1ff70ed4808bac3b370ed67b",
+      "bytes": 345
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/CsvReportFormatterTest.class",
+      "status": "created",
+      "sha256": "e8543ba36b26783978a09aab14680994061a34df44381c138cd72f1d911ddbab",
+      "bytes": 4852
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/JsonReportFormatterTest.class",
+      "status": "created",
+      "sha256": "c2930df235b47b18ea51af0e813f6a1c8bec987df1ab4ab8c3926d510188c35c",
+      "bytes": 4986
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/LogCapture.class",
+      "status": "created",
+      "sha256": "8098ce981c0610d8e55dfd2613fe8eeecc986a340dad4be2a0a70c34d2185d2f",
+      "bytes": 1797
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/MonitoringReportSenderTest.class",
+      "status": "created",
+      "sha256": "0427c93b7021bb81a35fdf4dde69373ae0cf67df6ce33977f32f76e2f7ca9d27",
+      "bytes": 5250
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/ReportApplicationTest.class",
+      "status": "created",
+      "sha256": "b85b4aed6b8f228c19b29cdcb1104f3cffd9bf87375f80e99765bcdc5d48e318",
+      "bytes": 1773
+    },
+    {
+      "path": "target/test-classes/at/ac/technikum/reporting/ReportGeneratorTest.class",
+      "status": "created",
+      "sha256": "ab9401649a36939f496f5586376ad08ac340d15d3dfb6c6ed8535a9b93b137d2",
+      "bytes": 11336
+    },
+    {
+      "path": "verification/FileManifest.json",
+      "status": "created",
+      "sha256": null,
+      "note": "Self-hash omitted"
+    },
+    {
+      "path": "verification/FilesCreated.md",
+      "status": "created",
+      "sha256": "5e211cb15bb15121dcd66393389f4c13b1c24a9fa25a341aeadac67dd82cfd3f",
+      "bytes": 9945
+    },
+    {
+      "path": "verification/Results.md",
+      "status": "created",
+      "sha256": "2886d65fa36a383c02909f48c8b314ba75fb584baa0fd0e2fcd02761ff6c6eab",
+      "bytes": 5293
+    },
+    {
+      "path": "verification/junit-results.xml",
+      "status": "created",
+      "sha256": "9e93832713457bf1df1f698b6c6ad01878f1f0ac915e4a9f8c56a09982f6982f",
+      "bytes": 60779
+    },
+    {
+      "path": "verification/maven-baseline-before-scope-review.log",
+      "status": "created",
+      "sha256": "2f8860b5b62a53fc24e02b9dd198802b87906345de6fa7d5108925b9eba926d9",
+      "bytes": 820
+    },
+    {
+      "path": "verification/maven-baseline.log",
+      "status": "created",
+      "sha256": "bd50061919c343c3909ca45c0980e46c2d5ab985a41be8e7f618b937f58309fc",
+      "bytes": 820
+    },
+    {
+      "path": "verification/maven-verify-before-scope-review.log",
+      "status": "created",
+      "sha256": "8eba0db766213fbc0c5edb808c8282f52c5c50198e80e498ac60ce6eb8f31e7a",
+      "bytes": 13468
+    },
+    {
+      "path": "verification/maven-verify-initial.log",
+      "status": "created",
+      "sha256": "37bfe48b1c323484a9039fa6c902df74d02d9dcaa5d4a4ee15bb3bd32a03d4f4",
+      "bytes": 15329
+    },
+    {
+      "path": "verification/maven-verify.log",
+      "status": "created",
+      "sha256": "176da01d0195b9db60709fbac9ea9ca32cd4e5b74384b398681bd86f988ba774",
+      "bytes": 13468
+    },
+    {
+      "path": "verification/pmd-original.xml",
+      "status": "created",
+      "sha256": "d6c773ae06b71f6a5005ef79a3093a116f6c0b8d4c1e9bef413669013c3d093e",
+      "bytes": 4868
+    },
+    {
+      "path": "verification/pmd-refactored.xml",
+      "status": "created",
+      "sha256": "5463d49b97c3c6a5212e6d503b3a923141cdae87ec340d6c7341540c42a4e8f0",
+      "bytes": 550
+    },
+    {
+      "path": "verification/runtime-checks.log",
+      "status": "created",
+      "sha256": "6bc878b2dfb4932cd1785436b2fad237955adc81ac0615388f2d410947d945ab",
+      "bytes": 4788
+    }
+  ]
+}
