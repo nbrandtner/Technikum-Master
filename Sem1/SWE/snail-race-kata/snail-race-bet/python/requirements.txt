@@ -1,0 +1,4 @@
+pytest
+pymongo
+requests
+dataclasses
