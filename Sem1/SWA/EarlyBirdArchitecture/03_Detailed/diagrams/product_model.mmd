@@ -1,0 +1,17 @@
+classDiagram
+ class Product {
+ productCode
+ name
+ unit
+ priceInEuros
+ characteristics
+ }
+ class SimpleProduct
+ class ProductPackage
+ class PackageItem {
+ quantity
+ }
+ Product <|-- SimpleProduct
+ Product <|-- ProductPackage
+ ProductPackage "1" *-- "1..*" PackageItem
+ PackageItem "0..*" --> "1" Product : child

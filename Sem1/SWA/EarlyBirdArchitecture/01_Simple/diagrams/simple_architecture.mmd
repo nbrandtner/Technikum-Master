@@ -1,0 +1,9 @@
+flowchart TB
+ W[Web interface] --> O[Order Service]
+ S[SMS interface] --> O
+ subgraph Core[Application core]
+ O --> C[Customer Service]
+ O --> P[Product Service]
+ O --> D[Delivery Service]
+ D --> I[Document Service]
+ end

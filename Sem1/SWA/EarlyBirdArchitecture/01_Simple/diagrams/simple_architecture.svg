@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="340" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="340"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-340)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="160" y="278" width="180" height="44" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="207.378662109375" y="296.1" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,592) scale(1,-1)">Web interface</text>
+			<rect x="380" y="278" width="180" height="44" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="427.013671875" y="296.1" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,592) scale(1,-1)">SMS interface</text>
+			<rect x="20" y="50" width="680" height="197" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(97%,98%,98%); fill-rule: evenodd;"/>
+			<text x="35" y="228.0" style="font-family: Arial-Bold; font-size: 10px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,456) scale(1,-1)">APPLICATION CORE</text>
+			<rect x="270" y="153" width="180" height="52" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="317.36279296875" y="175.1" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,350) scale(1,-1)">Order Service</text>
+			<rect x="45" y="153" width="180" height="52" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="79.724609375" y="175.1" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,350) scale(1,-1)">Customer Service</text>
+			<rect x="495" y="153" width="180" height="52" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="535.50732421875" y="175.1" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,350) scale(1,-1)">Product Service</text>
+			<rect x="75" y="73" width="260" height="48" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="154.767822265625" y="104.0" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,208) scale(1,-1)">Delivery Service</text>
+			<text x="154.858154296875" y="83" style="font-family: Arial; font-size: 11px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,166) scale(1,-1)">packing and delivery</text>
+			<rect x="385" y="73" width="260" height="48" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="458.28369140625" y="104.0" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,208) scale(1,-1)">Document Service</text>
+			<text x="437.96240234375" y="83" style="font-family: Arial; font-size: 11px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,166) scale(1,-1)">labels invoices payment reports</text>
+			<path d="M 250,278 L 250,258 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 250,258 L 360,258 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 360,258 L 360,205 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="360 205, 357.2 211, 362.8 211" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 470,278 L 470,258 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 470,258 L 360,258 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="360 258, 366 260.8, 366 255.2" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 270,179 L 225,179 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="225 179, 231 181.8, 231 176.2" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 450,179 L 495,179 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="495 179, 489 176.2, 489 181.8" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 360,153 L 360,137 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 360,137 L 205,137 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 205,137 L 205,121 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="205 121, 202.2 127, 207.8 127" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 335,97 L 385,97 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="385 97, 379 94.2, 379 99.8" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<text x="191.92236328124997" y="23.0" style="font-family: Arial; font-size: 9px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,46) scale(1,-1)">All services access stored data through repositories. External systems use adapters.</text>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="740" height="270" preserveAspectRatio="xMinYMin meet" viewBox="0 0 740 270" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="740" height="270"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-270)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="250" y="190" width="240" height="63" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="345.444091796875" y="236.0" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,472) scale(1,-1)">Product</text>
+			<text x="282.265869140625" y="200" style="font-family: Arial; font-size: 11px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,400) scale(1,-1)">code name unit price characteristics</text>
+			<rect x="70" y="82" width="240" height="55" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="142.325927734375" y="105.6" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,211) scale(1,-1)">Simple Product</text>
+			<rect x="430" y="82" width="240" height="55" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="497.25732421875" y="105.6" style="font-family: Arial-Bold; font-size: 13px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,211) scale(1,-1)">Product Package</text>
+			<path d="M 190,137 L 190,162 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 190,162 L 325,162 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 325,162 L 325,190 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="325 190, 327.8 184, 322.2 184" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<path d="M 550,137 L 550,162 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 550,162 L 415,162 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 415,162 L 415,190 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="415 190, 417.8 184, 412.2 184" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<rect x="430" y="5" width="240" height="48" rx="5" ry="5" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 0.9; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="511.64453125" y="36.0" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(9%,13%,18%); stroke:none;" transform="translate(0,72) scale(1,-1)">Package Item</text>
+			<text x="490.16845703125" y="15" style="font-family: Arial; font-size: 10.5px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,30) scale(1,-1)">child product and quantity</text>
+			<path d="M 550,82 L 550,53 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="550 53, 547.2 59, 552.8 59" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<text x="606.1070556640625" y="65.0" style="font-family: Arial; font-size: 10.5px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,130) scale(1,-1)">contains 1..*</text>
+			<path d="M 670,28 L 715,28 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 715,28 L 715,221 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<path d="M 715,221 L 490,221 Z" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1;"/>
+			<polygon points="490 221, 496 223.8, 496 218.2" style="stroke: rgb(14%,29%,40%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,29%,40%); fill-rule: evenodd;"/>
+			<text x="566.008056640625" y="236.0" style="font-family: Arial; font-size: 10.5px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,472) scale(1,-1)">references one product</text>
+			<text x="101.34033203125" y="40.0" style="font-family: Arial; font-size: 10px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,80) scale(1,-1)">Subtypes share the Product interface.</text>
+			<text x="97.72705078125" y="23.0" style="font-family: Arial; font-size: 10px;fill: rgb(32%,38%,42%); stroke:none;" transform="translate(0,46) scale(1,-1)">Packages may contain other packages.</text>
+		</g>
+	</g>
+</svg>

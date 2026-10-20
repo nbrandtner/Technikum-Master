@@ -1,0 +1,18 @@
+sequenceDiagram
+ participant A as Web or SMS adapter
+ participant O as Order Management
+ participant C as Customers and Access
+ participant P as Product Catalog
+ participant R as Order Repository
+ A->>O: SubmitOrder
+ O->>C: Authenticate and check blacklist
+ C-->>O: Customer identity and address
+ opt Blueprint selected
+ O->>R: Load blueprint and verify customer ownership
+ R-->>O: Blueprint order lines
+ end
+ O->>P: Resolve product codes and current prices
+ P-->>O: Validated products and prices
+ O->>R: Save order and submission key then commit
+ R-->>O: Committed order number
+ O-->>A: OrderAccepted

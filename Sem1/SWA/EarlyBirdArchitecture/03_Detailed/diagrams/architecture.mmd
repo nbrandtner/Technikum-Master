@@ -1,0 +1,13 @@
+flowchart TB
+ W[Web adapter] --> O[Order Management]
+ S[SMS adapter] --> O
+ J[Scheduler adapter] --> R[Reporting]
+ subgraph Core[Application core]
+ O --> C[Customers and Access]
+ O --> P[Product Catalog]
+ O --> F[Fulfillment]
+ F --> B[Billing and Documents]
+ R[Reporting]
+ end
+ Core --> Ports[Core owned repository and integration interfaces]
+ A[Database payment routing and printing adapters] -.-> Ports

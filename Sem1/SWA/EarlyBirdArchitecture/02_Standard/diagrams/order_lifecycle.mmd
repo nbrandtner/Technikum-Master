@@ -1,0 +1,8 @@
+stateDiagram-v2
+ [*] --> SUBMITTED
+ SUBMITTED --> ASSEMBLED: Complete assembly
+ SUBMITTED --> CANCELLED: Cancel
+ ASSEMBLED --> OUT_FOR_DELIVERY: Dispatch
+ OUT_FOR_DELIVERY --> DELIVERED: Customer confirmation
+ CANCELLED --> [*]
+ DELIVERED --> [*]
