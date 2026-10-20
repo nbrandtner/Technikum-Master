@@ -41,5 +41,3 @@ Cancellation is possible until assembly is complete. It is permanent. Order cont
 **b All meals all day.** Extend the Product Service with meal categories and availability times. Adapt operating-hour rules in ordering and delivery. Generic products and orders already support meals beyond breakfast.
 
 **c Online tracking.** Extend the Delivery Service with a customer-authorized tracking query and add a web tracking page. Reuse stored dispatch and delivery status. Live vehicle tracking would additionally require courier location updates.
-
-Source: Melanie Goldblum, Early Bird Management System (EBMS), Requirements Version 1.50, pages 1 to 3. Requirement references use R followed by the requirement number.
