@@ -1,0 +1,405 @@
+{
+  "title": "Early Bird Management System Requirements",
+  "version": "1.50",
+  "filename": "EarlyBird-Requirements.pdf",
+  "sha256": "a48fb03c232777c7db22d76b0f5f0f63cecf4868acdb29014987978e8c1b54eb",
+  "extraction": "pypdf; whitespace collapsed; inter-paragraph headings removed",
+  "requirements": [
+    {
+      "id": "R01",
+      "number": 1,
+      "page": 1,
+      "text": "We guarantee breakfast delivery in less than 25 minutes to all parts of the city.",
+      "disposition": "quality constraint",
+      "rationale": "The delivery promise constrains fulfillment quality; it does not specify an independent software capability.",
+      "baseline_eligible": false
+    },
+    {
+      "id": "R02",
+      "number": 2,
+      "page": 1,
+      "text": "We offer a number of prepackaged breakfasts like the mini-breakfast (one croissant, one coffee), the luxury breakfast (one croissant, one glass of orange juice, two kinds of jam, ham and eggs, one cup of coffee) and many more.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R03",
+      "number": 3,
+      "page": 1,
+      "text": "Of course, our customers can also assemble an individual breakfast to their taste by choosing from a long list of simple products (croissant, orange juice, butter, …).",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R04",
+      "number": 4,
+      "page": 1,
+      "text": "A prepackaged product may contain simple products, but also other prepackaged products.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R05",
+      "number": 5,
+      "page": 1,
+      "text": "So, a typical order consists of various amounts of various products (prepackaged ones and/or simple ones).",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R06",
+      "number": 6,
+      "page": 1,
+      "text": "Each product has a unit (e.g. 100 grams) and a price per unit denominated in Euros.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R07",
+      "number": 7,
+      "page": 1,
+      "text": "Currently, our customers can place orders only over the phone.",
+      "disposition": "superseded",
+      "rationale": "Phone-only ordering is explicitly replaced by web ordering in R32 and extended by SMS in R37.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R08",
+      "number": 8,
+      "page": 1,
+      "text": "To do so, they call our company number 384 29 734 and tell us their customer number.",
+      "disposition": "superseded",
+      "rationale": "The phone interaction is retired by R32; customer identification remains in R09/R11, and R37 reuses the company number for SMS.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R09",
+      "number": 9,
+      "page": 1,
+      "text": "A customer number has seven digits that are preceded by a two-digit area code and followed by a one digit checksum.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R10",
+      "number": 10,
+      "page": 1,
+      "text": "There are no collective orders of several customers.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R11",
+      "number": 11,
+      "page": 1,
+      "text": "After the phone clerk has authenticated the customer (which includes checking that he is not blacklisted e.g. due to bad payment morale) the customer names one or several products to be added to the shopping cart.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R12",
+      "number": 12,
+      "page": 1,
+      "text": "If the customer is not sure about certain products, she can tell the phone clerk the desired characteristics (e.g. less than 300 calories and less than € 4) and gets a choice of suitable products to pick from.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R13",
+      "number": 13,
+      "page": 1,
+      "text": "The customer can also decide to simply place a follow-up-order by naming one of her previous orders, which serves as a blueprint for the new order.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R14",
+      "number": 14,
+      "page": 2,
+      "text": "Those three methods of assembling the shopping cart (direct naming of products, choosing from a list of suitable products presented by the phone clerk, naming an order as a blueprint) can be combined within placing one order.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R15",
+      "number": 15,
+      "page": 2,
+      "text": "However, an order can only have one blueprint order at most.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R16",
+      "number": 16,
+      "page": 2,
+      "text": "One order can serve as a blueprint many times.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R17",
+      "number": 17,
+      "page": 2,
+      "text": "For each customer, only one address is predefined. Therefore, there is no need to specify a delivery address when ordering. The process ends by the phone clerk informing the customer about the order number, which is an eight-digit number with a checksum.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R18",
+      "number": 18,
+      "page": 2,
+      "text": "A packing clerk looks at each order, assembles the ordered products and puts them into a paper bag.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R19",
+      "number": 19,
+      "page": 2,
+      "text": "Using an ordinary text processing system, the packing clerk prints a label with his own name, the first name of the customer, the surname of the customer, the address, the order number and the delivery clerk he assigned to the order.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R20",
+      "number": 20,
+      "page": 2,
+      "text": "The label is attached to the paper bag.",
+      "disposition": "physical process",
+      "rationale": "Attaching a label to a bag is physical work, supported by software label generation in R19.",
+      "baseline_eligible": false
+    },
+    {
+      "id": "R21",
+      "number": 21,
+      "page": 2,
+      "text": "Also, the packing clerk prints an invoice twice with the text processing system.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R22",
+      "number": 22,
+      "page": 2,
+      "text": "The invoice shows the same data as the label plus the individual ordered products, their amounts and prices and the sum total.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R23",
+      "number": 23,
+      "page": 2,
+      "text": "If an invoice is printed several times, each copy gets a separate number.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R24",
+      "number": 24,
+      "page": 2,
+      "text": "The delivery clerk calculates the optimal itinerary, often using an ordinary spreadsheet. This is important as many orders may be fulfilled within one itinerary.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R25",
+      "number": 25,
+      "page": 2,
+      "text": "The delivery clerk prints out the optimal itinerary, takes the corresponding bags and invoices and drives to the corresponding customers.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R26",
+      "number": 26,
+      "page": 2,
+      "text": "Each customer confirms delivery by signing a copy of the invoice. She keeps the other copy.",
+      "disposition": "superseded",
+      "rationale": "R35 replaces handwritten confirmation. Keeping the customer's invoice copy remains physical process context under R21.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R27",
+      "number": 27,
+      "page": 2,
+      "text": "Each customer can inquire into the status of her order over the phone using the order number. The phone clerk then tells the customer whether the delivery clerk is already on his way or not.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R28",
+      "number": 28,
+      "page": 2,
+      "text": "Canceling an order is possible by calling the phone clerk and naming the order number.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R29",
+      "number": 29,
+      "page": 2,
+      "text": "Once the order has been assembled, canceling is not possible anymore.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R30",
+      "number": 30,
+      "page": 2,
+      "text": "A cancelation cannot be undone.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R31",
+      "number": 31,
+      "page": 2,
+      "text": "Updating of orders is not possible. If the customer wants to change an order, she has to cancel it and place a new order.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R32",
+      "number": 32,
+      "page": 3,
+      "text": "We want the current process to be automated (but not changed) by a web-based application. The application replaces the current ordering by phone which will be discontinued. It also replaces the text processing system used for labeling and the tools used for calculating and printing the optimal itinerary.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R33",
+      "number": 33,
+      "page": 3,
+      "text": "The application is supposed to support the following browsers in the following versions: ...",
+      "disposition": "platform constraint",
+      "rationale": "The browser/version compatibility list is an unspecified platform constraint, retained as assumption A01.",
+      "baseline_eligible": false
+    },
+    {
+      "id": "R34",
+      "number": 34,
+      "page": 3,
+      "text": "The user groups are: customers, packing clerks, delivery clerks and managers. There will be no phone clerks in the future.",
+      "disposition": "actor context",
+      "rationale": "Defines future user groups and removes phone clerks; does not establish new administration use cases.",
+      "baseline_eligible": false
+    },
+    {
+      "id": "R35",
+      "number": 35,
+      "page": 3,
+      "text": "The confirmation of the delivery by the customer should also be browser-based: The delivery clerk presents a smartphone to the customer who enters her password in a browser window to confirm the delivery.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R36",
+      "number": 36,
+      "page": 3,
+      "text": "The software should offer a browser-based product search function that requires no authentication. The product search also replaces having the phone clerk list suitable products.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R37",
+      "number": 37,
+      "page": 3,
+      "text": "In the future, customers can also order by text messages (SMS). In this case they send a defined string to our company number 384 29 734. The string looks like this: C 2339110045 W mypswd P EGG 1 P TOAST 2 P OJUICE 1. This represents an order of the customer with the customer number 2339110045 having the password mypswd. The order is for one egg, two toasts and one glass of orange juice.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R38",
+      "number": 38,
+      "page": 3,
+      "text": "Each product has a unique product code as shown above.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R39",
+      "number": 39,
+      "page": 3,
+      "text": "The string may contain any number of products but is naturally limited by the length text messages can have in general.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R40",
+      "number": 40,
+      "page": 3,
+      "text": "The system responds with a text message specifying the order number the system has assigned to the order.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R41",
+      "number": 41,
+      "page": 3,
+      "text": "Canceling by text message should be possible by sending a text message of the form O 261273842 to the above number. In the example, the order with the order number 261273842 is canceled.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R42",
+      "number": 42,
+      "page": 3,
+      "text": "We have a payment system already in place. It receives interface records for expected payments. The interface record comprises the customerNumber, the orderNumber, the amountInEuros and the expected payment date.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R43",
+      "number": 43,
+      "page": 3,
+      "text": "Once the packing clerk has finished assembling an order, a record representing an expected payment for the order should be transferred to the payment system.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    },
+    {
+      "id": "R44",
+      "number": 44,
+      "page": 3,
+      "text": "The system is supposed to print a business report for the manager every night automatically that lists the orders of a given day along with the product, the amount, the packing clerk and the delivery clerk, the customer, the customer’s address and the order number.",
+      "disposition": "retained",
+      "rationale": "Business obligation remains applicable under R32.",
+      "baseline_eligible": true
+    }
+  ]
+}

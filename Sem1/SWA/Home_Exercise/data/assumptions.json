@@ -1,0 +1,9 @@
+[
+  {"id":"A01","sources":["R33"],"question":"Which browsers and versions must be supported?","handling":"Keep as an unresolved platform constraint; the PDF contains an ellipsis."},
+  {"id":"A02","sources":["R09","R17","R41"],"question":"Which checksum algorithms and order-number length interpretation apply?","handling":"Assume eight base order digits plus checksum for discussion. Do not implement a guessed checksum algorithm."},
+  {"id":"A03","sources":["R41"],"question":"How is an SMS cancellation sender authorized?","handling":"The source provides only an order number. Keep authentication policy unresolved."},
+  {"id":"A04","sources":["R42"],"question":"How is the expected payment date calculated?","handling":"Record the field and interface; leave calculation policy unresolved."},
+  {"id":"A05","sources":["R24","R01"],"question":"What objective, travel data, and constraints define an optimal itinerary?","handling":"Preserve itinerary optimization and the 25-minute promise; do not claim either is solved by semantic clustering."},
+  {"id":"A06","sources":["R44"],"question":"What timezone and cutoff define a business day and nightly printing?","handling":"Keep schedule and day selection explicit; do not assume a business timezone from the developer's computer."},
+  {"id":"A07","sources":["R04"],"question":"May product packages contain cycles?","handling":"Recursive composition is explicit; cycle validation is an unresolved domain rule."}
+]

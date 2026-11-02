@@ -1,0 +1,346 @@
+[
+  {
+    "id": "R02.a",
+    "text": "Offer prepackaged breakfasts containing a defined selection of products, such as mini-breakfast and luxury breakfast.",
+    "review_note": "Examples describe offered packages; no new product administration functionality is inferred.",
+    "source": "R02",
+    "page": 1,
+    "source_quote": "We offer a number of prepackaged breakfasts like the mini-breakfast (one croissant, one coffee), the luxury breakfast (one croissant, one glass of orange juice, two kinds of jam, ham and eggs, one cup of coffee) and many more."
+  },
+  {
+    "id": "R03.a",
+    "text": "Customers can assemble an individual breakfast by choosing simple products.",
+    "review_note": "Preserves customer composition of a breakfast.",
+    "source": "R03",
+    "page": 1,
+    "source_quote": "Of course, our customers can also assemble an individual breakfast to their taste by choosing from a long list of simple products (croissant, orange juice, butter, …)."
+  },
+  {
+    "id": "R04.a",
+    "text": "A prepackaged product can contain simple products and other prepackaged products.",
+    "review_note": "Preserves recursive product composition; cycle handling is unspecified.",
+    "source": "R04",
+    "page": 1,
+    "source_quote": "A prepackaged product may contain simple products, but also other prepackaged products."
+  },
+  {
+    "id": "R05.a",
+    "text": "An order consists of quantities of simple products and prepackaged products.",
+    "review_note": "Retains order-line quantities and both product types.",
+    "source": "R05",
+    "page": 1,
+    "source_quote": "So, a typical order consists of various amounts of various products (prepackaged ones and/or simple ones)."
+  },
+  {
+    "id": "R06.a",
+    "text": "Each product has a unit of measure and a price per unit in euros.",
+    "review_note": "Preserves unit-based pricing.",
+    "source": "R06",
+    "page": 1,
+    "source_quote": "Each product has a unit (e.g. 100 grams) and a price per unit denominated in Euros."
+  },
+  {
+    "id": "R09.a",
+    "text": "A customer number consists of a two-digit area code, seven customer digits, and a one-digit checksum.",
+    "review_note": "Format retained; the checksum computation is not specified.",
+    "source": "R09",
+    "page": 1,
+    "source_quote": "A customer number has seven digits that are preceded by a two-digit area code and followed by a one digit checksum."
+  },
+  {
+    "id": "R10.a",
+    "text": "Each order belongs to one customer; collective orders for several customers are not allowed.",
+    "review_note": "Preserves the single-customer invariant.",
+    "source": "R10",
+    "page": 1,
+    "source_quote": "There are no collective orders of several customers."
+  },
+  {
+    "id": "R11.a",
+    "text": "Authenticate the customer before allowing her to assemble an order.",
+    "review_note": "R32/R34 replace the clerk interaction with application behavior.",
+    "source": "R11",
+    "page": 1,
+    "source_quote": "After the phone clerk has authenticated the customer (which includes checking that he is not blacklisted e.g. due to bad payment morale) the customer names one or several products to be added to the shopping cart."
+  },
+  {
+    "id": "R11.b",
+    "text": "Check that a customer is not blacklisted before allowing her to order.",
+    "review_note": "Eligibility is a separate obligation from verifying identity.",
+    "source": "R11",
+    "page": 1,
+    "source_quote": "After the phone clerk has authenticated the customer (which includes checking that he is not blacklisted e.g. due to bad payment morale) the customer names one or several products to be added to the shopping cart."
+  },
+  {
+    "id": "R11.c",
+    "text": "An authenticated eligible customer can add one or more named products to the shopping cart.",
+    "review_note": "Direct product selection remains after phone-clerk retirement.",
+    "source": "R11",
+    "page": 1,
+    "source_quote": "After the phone clerk has authenticated the customer (which includes checking that he is not blacklisted e.g. due to bad payment morale) the customer names one or several products to be added to the shopping cart."
+  },
+  {
+    "id": "R12.a",
+    "text": "Search for suitable products by requested characteristics, including a calorie limit and a price limit.",
+    "review_note": "R36 replaces the clerk-mediated search; the criteria remain applicable.",
+    "source": "R12",
+    "page": 1,
+    "source_quote": "If the customer is not sure about certain products, she can tell the phone clerk the desired characteristics (e.g. less than 300 calories and less than € 4) and gets a choice of suitable products to pick from."
+  },
+  {
+    "id": "R13.a",
+    "text": "A customer can use one of her previous orders as a blueprint for a new order.",
+    "review_note": "Preserves ownership of the previous order and follow-up ordering.",
+    "source": "R13",
+    "page": 1,
+    "source_quote": "The customer can also decide to simply place a follow-up-order by naming one of her previous orders, which serves as a blueprint for the new order."
+  },
+  {
+    "id": "R14.a",
+    "text": "Within one order, customers can combine direct product selection, product search results, and a previous-order blueprint.",
+    "review_note": "Expands 'those three methods' using R11-R13; removes retired clerk wording under R32.",
+    "source": "R14",
+    "page": 2,
+    "source_quote": "Those three methods of assembling the shopping cart (direct naming of products, choosing from a list of suitable products presented by the phone clerk, naming an order as a blueprint) can be combined within placing one order."
+  },
+  {
+    "id": "R15.a",
+    "text": "An order can reference at most one blueprint order.",
+    "review_note": "Preserves the at-most-one constraint, including the possibility of no blueprint.",
+    "source": "R15",
+    "page": 2,
+    "source_quote": "However, an order can only have one blueprint order at most."
+  },
+  {
+    "id": "R16.a",
+    "text": "An order can serve as the blueprint for many subsequent orders.",
+    "review_note": "Preserves blueprint reuse without imposing a usage limit.",
+    "source": "R16",
+    "page": 2,
+    "source_quote": "One order can serve as a blueprint many times."
+  },
+  {
+    "id": "R17.a",
+    "text": "Each customer has exactly one predefined delivery address, which is reused when placing an order.",
+    "review_note": "Separates the address rule from order-number assignment in the same statement.",
+    "source": "R17",
+    "page": 2,
+    "source_quote": "For each customer, only one address is predefined. Therefore, there is no need to specify a delivery address when ordering. The process ends by the phone clerk informing the customer about the order number, which is an eight-digit number with a checksum."
+  },
+  {
+    "id": "R17.b",
+    "text": "Assign an order number consisting of eight digits with a checksum and communicate it to the customer after ordering.",
+    "review_note": "Eight base digits plus checksum is a working interpretation consistent with R41's example; checksum algorithm remains open.",
+    "source": "R17",
+    "page": 2,
+    "source_quote": "For each customer, only one address is predefined. Therefore, there is no need to specify a delivery address when ordering. The process ends by the phone clerk informing the customer about the order number, which is an eight-digit number with a checksum."
+  },
+  {
+    "id": "R18.a",
+    "text": "Display each order and its ordered products to the packing clerk for assembly.",
+    "review_note": "Software support inferred from automation in R32; physical bag packing remains process context.",
+    "source": "R18",
+    "page": 2,
+    "source_quote": "A packing clerk looks at each order, assembles the ordered products and puts them into a paper bag."
+  },
+  {
+    "id": "R19.a",
+    "text": "The packing clerk assigns a delivery clerk to an order.",
+    "review_note": "Extracts the assignment operation embedded in the label description.",
+    "source": "R19",
+    "page": 2,
+    "source_quote": "Using an ordinary text processing system, the packing clerk prints a label with his own name, the first name of the customer, the surname of the customer, the address, the order number and the delivery clerk he assigned to the order."
+  },
+  {
+    "id": "R19.b",
+    "text": "Print a bag label with the packing clerk name, customer first name and surname, delivery address, order number, and assigned delivery clerk.",
+    "review_note": "R32 replaces the text processor; all listed label fields are preserved.",
+    "source": "R19",
+    "page": 2,
+    "source_quote": "Using an ordinary text processing system, the packing clerk prints a label with his own name, the first name of the customer, the surname of the customer, the address, the order number and the delivery clerk he assigned to the order."
+  },
+  {
+    "id": "R21.a",
+    "text": "The packing clerk prints two copies of an order invoice.",
+    "review_note": "R32 replaces the old text processor without changing the number of copies.",
+    "source": "R21",
+    "page": 2,
+    "source_quote": "Also, the packing clerk prints an invoice twice with the text processing system."
+  },
+  {
+    "id": "R22.a",
+    "text": "An invoice contains the packing clerk, customer name and address, order number, delivery clerk, ordered products, quantities, prices, and sum total.",
+    "review_note": "Expands 'same data as the label' from R19; retains invoice-specific financial fields.",
+    "source": "R22",
+    "page": 2,
+    "source_quote": "The invoice shows the same data as the label plus the individual ordered products, their amounts and prices and the sum total."
+  },
+  {
+    "id": "R23.a",
+    "text": "Every printed invoice copy receives a separate copy number, including copies printed again later.",
+    "review_note": "Preserves separate numbering for each print, not just a version per order.",
+    "source": "R23",
+    "page": 2,
+    "source_quote": "If an invoice is printed several times, each copy gets a separate number."
+  },
+  {
+    "id": "R24.a",
+    "text": "Calculate an optimal delivery itinerary that can fulfill multiple orders on one trip.",
+    "review_note": "R32 replaces spreadsheet calculation. The optimization objective is unspecified.",
+    "source": "R24",
+    "page": 2,
+    "source_quote": "The delivery clerk calculates the optimal itinerary, often using an ordinary spreadsheet. This is important as many orders may be fulfilled within one itinerary."
+  },
+  {
+    "id": "R25.a",
+    "text": "The delivery clerk can print the calculated itinerary for the corresponding orders.",
+    "review_note": "Extracts software printing; taking bags and driving remain physical process context.",
+    "source": "R25",
+    "page": 2,
+    "source_quote": "The delivery clerk prints out the optimal itinerary, takes the corresponding bags and invoices and drives to the corresponding customers."
+  },
+  {
+    "id": "R27.a",
+    "text": "A customer can look up an order by its order number and learn whether its delivery clerk is already on the way.",
+    "review_note": "R32 removes phone interaction while preserving status information.",
+    "source": "R27",
+    "page": 2,
+    "source_quote": "Each customer can inquire into the status of her order over the phone using the order number. The phone clerk then tells the customer whether the delivery clerk is already on his way or not."
+  },
+  {
+    "id": "R28.a",
+    "text": "A customer can request cancellation of an order by giving its order number.",
+    "review_note": "R32 removes the phone clerk; R29-R31 still constrain cancellation.",
+    "source": "R28",
+    "page": 2,
+    "source_quote": "Canceling an order is possible by calling the phone clerk and naming the order number."
+  },
+  {
+    "id": "R29.a",
+    "text": "Once an order has been assembled, cancellation is no longer allowed.",
+    "review_note": "Preserves the exact assembly cutoff; does not change it to dispatch.",
+    "source": "R29",
+    "page": 2,
+    "source_quote": "Once the order has been assembled, canceling is not possible anymore."
+  },
+  {
+    "id": "R30.a",
+    "text": "An order cancellation cannot be undone.",
+    "review_note": "Preserves irreversible cancellation.",
+    "source": "R30",
+    "page": 2,
+    "source_quote": "A cancelation cannot be undone."
+  },
+  {
+    "id": "R31.a",
+    "text": "Updating an existing order is not allowed.",
+    "review_note": "Separates prohibition of update from the supported replacement workflow.",
+    "source": "R31",
+    "page": 2,
+    "source_quote": "Updating of orders is not possible. If the customer wants to change an order, she has to cancel it and place a new order."
+  },
+  {
+    "id": "R31.b",
+    "text": "To change an order, a customer must cancel it and place a new order.",
+    "review_note": "The replacement workflow remains subject to the cancellation cutoff.",
+    "source": "R31",
+    "page": 2,
+    "source_quote": "Updating of orders is not possible. If the customer wants to change an order, she has to cancel it and place a new order."
+  },
+  {
+    "id": "R32.a",
+    "text": "Customers place orders through a web application, replacing ordering by phone.",
+    "review_note": "Represents the web entry point; R19/R24/R25 preserve the individual replacement capabilities.",
+    "source": "R32",
+    "page": 3,
+    "source_quote": "We want the current process to be automated (but not changed) by a web-based application. The application replaces the current ordering by phone which will be discontinued. It also replaces the text processing system used for labeling and the tools used for calculating and printing the optimal itinerary."
+  },
+  {
+    "id": "R35.a",
+    "text": "Confirm delivery when the customer enters her password in a browser on the delivery clerk's smartphone.",
+    "review_note": "Supersedes handwritten confirmation in R26; preserves customer authentication at handover.",
+    "source": "R35",
+    "page": 3,
+    "source_quote": "The confirmation of the delivery by the customer should also be browser-based: The delivery clerk presents a smartphone to the customer who enters her password in a browser window to confirm the delivery."
+  },
+  {
+    "id": "R36.a",
+    "text": "Allow browser-based product search without requiring authentication.",
+    "review_note": "Retains public search access, distinct from authenticated ordering.",
+    "source": "R36",
+    "page": 3,
+    "source_quote": "The software should offer a browser-based product search function that requires no authentication. The product search also replaces having the phone clerk list suitable products."
+  },
+  {
+    "id": "R37.a",
+    "text": "Accept SMS orders at the company number using the defined C customer-number W password P product-code quantity format.",
+    "review_note": "Retains the SMS input contract and credentials. It invokes existing ordering rules rather than creating separate SMS business rules.",
+    "source": "R37",
+    "page": 3,
+    "source_quote": "In the future, customers can also order by text messages (SMS). In this case they send a defined string to our company number 384 29 734. The string looks like this: C 2339110045 W mypswd P EGG 1 P TOAST 2 P OJUICE 1. This represents an order of the customer with the customer number 2339110045 having the password mypswd. The order is for one egg, two toasts and one glass of orange juice."
+  },
+  {
+    "id": "R38.a",
+    "text": "Every product has a unique product code.",
+    "review_note": "The identifier is a product property even though SMS motivates its use.",
+    "source": "R38",
+    "page": 3,
+    "source_quote": "Each product has a unique product code as shown above."
+  },
+  {
+    "id": "R39.a",
+    "text": "An SMS order can contain any number of product entries within the general SMS message-length limit.",
+    "review_note": "No new arbitrary product-count limit or fixed SMS character limit is introduced.",
+    "source": "R39",
+    "page": 3,
+    "source_quote": "The string may contain any number of products but is naturally limited by the length text messages can have in general."
+  },
+  {
+    "id": "R40.a",
+    "text": "Respond to an SMS order with a text message containing the assigned order number.",
+    "review_note": "Transport-specific response; the number is assigned by the shared ordering behavior.",
+    "source": "R40",
+    "page": 3,
+    "source_quote": "The system responds with a text message specifying the order number the system has assigned to the order."
+  },
+  {
+    "id": "R41.a",
+    "text": "Accept an SMS cancellation request in the format O followed by the order number.",
+    "review_note": "Cancellation eligibility remains governed by R29-R31; sender authentication is unspecified.",
+    "source": "R41",
+    "page": 3,
+    "source_quote": "Canceling by text message should be possible by sending a text message of the form O 261273842 to the above number. In the example, the order with the order number 261273842 is canceled."
+  },
+  {
+    "id": "R42.a",
+    "text": "Provide the existing payment system with expected-payment records containing customer number, order number, amount in euros, and expected payment date.",
+    "review_note": "The payment system remains external; the expected-date policy is not invented.",
+    "source": "R42",
+    "page": 3,
+    "source_quote": "We have a payment system already in place. It receives interface records for expected payments. The interface record comprises the customerNumber, the orderNumber, the amountInEuros and the expected payment date."
+  },
+  {
+    "id": "R43.a",
+    "text": "When the packing clerk finishes assembling an order, transfer its expected-payment record to the existing payment system.",
+    "review_note": "Preserves assembly completion as trigger, rather than invoice printing or dispatch.",
+    "source": "R43",
+    "page": 3,
+    "source_quote": "Once the packing clerk has finished assembling an order, a record representing an expected payment for the order should be transferred to the payment system."
+  },
+  {
+    "id": "R44.a",
+    "text": "Automatically print a business report for the manager every night covering orders of a given day.",
+    "review_note": "Preserves scheduling and physical report output; business-day cutoff is unspecified.",
+    "source": "R44",
+    "page": 3,
+    "source_quote": "The system is supposed to print a business report for the manager every night automatically that lists the orders of a given day along with the product, the amount, the packing clerk and the delivery clerk, the customer, the customer’s address and the order number."
+  },
+  {
+    "id": "R44.b",
+    "text": "The daily business report lists products, quantities, packing clerk, delivery clerk, customer, customer address, and order number for the day's orders.",
+    "review_note": "Separates reporting content from nightly scheduling without removing any listed fields.",
+    "source": "R44",
+    "page": 3,
+    "source_quote": "The system is supposed to print a business report for the manager every night automatically that lists the orders of a given day along with the product, the amount, the packing clerk and the delivery clerk, the customer, the customer’s address and the order number."
+  }
+]

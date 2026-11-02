@@ -1,0 +1,8 @@
+{
+  "model": "sentence-transformers/all-mpnet-base-v2",
+  "revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+  "sentence_transformers": "6.2.0",
+  "torch": "2.15.0",
+  "device": "cpu",
+  "normalized": true
+}

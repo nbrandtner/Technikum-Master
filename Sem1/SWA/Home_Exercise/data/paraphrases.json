@@ -1,0 +1,6 @@
+[
+  {"id":"blueprint-wording","clause":"R13.a","text":"For a new order, a customer may choose one of her own earlier orders as its blueprint.","review":"Preserves customer ownership, blueprint semantics, and the possibility rather than obligation to reuse."},
+  {"id":"cancellation-wording","clause":"R29.a","text":"An assembled order must not be canceled; cancellation is permitted only before assembly has finished.","review":"Preserves the assembly-completion cutoff and the prohibition after that point."},
+  {"id":"payment-trigger-wording","clause":"R43.a","text":"As soon as a packing clerk completes assembly of an order, send the record of its expected payment to the existing payment system.","review":"Preserves actor, completion trigger, expected-payment record, and external destination."},
+  {"id":"report-wording","clause":"R44.a","text":"Each night, the system prints the manager's business report automatically for the selected day's orders.","review":"Preserves automatic nightly printing, manager audience, and orders of a given day."}
+]
