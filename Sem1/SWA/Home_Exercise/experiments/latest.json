@@ -69825,31 +69825,33 @@
     "example_neighbors": [
       {
         "id": "R30.a",
-        "cosine": 0.8922377824783325
+        "cosine": 0.784475564956665
       },
       {
         "id": "R28.a",
-        "cosine": 0.8522379398345947
+        "cosine": 0.7044758796691895
       },
       {
         "id": "R41.a",
-        "cosine": 0.8048769235610962
+        "cosine": 0.6097538471221924
       },
       {
         "id": "R31.b",
-        "cosine": 0.7973473072052002
+        "cosine": 0.5946946144104004
       },
       {
         "id": "R31.a",
-        "cosine": 0.766012966632843
+        "cosine": 0.532025933265686
       },
       {
         "id": "R10.a",
-        "cosine": 0.7320948839187622
+        "cosine": 0.4641897678375244
       }
     ],
     "persisted_memberships_verified": true,
     "base_runs": 180,
-    "paraphrase_runs": 120
+    "paraphrase_runs": 120,
+    "neighbor_score_convention": "raw cosine [-1,1]; Neo4j values converted via 2*score-1",
+    "neighbor_scores_verified_utc": "2026-11-03T14:30:21.087650+00:00"
   }
 }

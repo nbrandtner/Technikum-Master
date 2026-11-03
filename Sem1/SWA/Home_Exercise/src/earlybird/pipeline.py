@@ -97,6 +97,7 @@ def run_experiment(k_min=2, k_max=10, seeds=10, paraphrases=True, model=DEFAULT_
         nearest = db.nearest(reviewed["fingerprint"], "R29.a")
         bundle["verification"] = {"vector_indexes": indexes, "example_query": "R29.a",
             "example_neighbors": nearest, "persisted_memberships_verified": True,
+            "neighbor_score_convention": "raw cosine [-1,1]; Neo4j values converted via 2*score-1",
             "base_runs": sum(len(d["runs"]) for d in bundle["datasets"].values()),
             "paraphrase_runs": sum(len(v["runs"]) for v in bundle["paraphrases"])}
         temporary = RESULTS / "latest.tmp.json"

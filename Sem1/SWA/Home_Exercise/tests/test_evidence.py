@@ -1,4 +1,5 @@
 """Checks protect provenance and scientific claims, not implementation details."""
+import os
 import numpy as np
 import pytest
 from sklearn.metrics import adjusted_rand_score
@@ -82,3 +83,27 @@ def test_saved_results_have_complete_aligned_memberships_and_finite_metrics():
             base = next(r for r in bundle["datasets"]["reviewed"]["runs"] if r["id"] == run["baseline_run"])
             assert run["ids"] == base["ids"]
             assert run["ari_to_same_seed"] == pytest.approx(adjusted_rand_score(base["labels"], run["labels"]))
+    example = bundle["verification"]["example_query"]
+    live_evidence = bundle["verification"]["example_neighbors"]
+    saved = bundle["datasets"]["reviewed"]["neighbors"][example]
+    assert [n["id"] for n in live_evidence] == [n["id"] for n in saved]
+    np.testing.assert_allclose([n["cosine"] for n in live_evidence],
+                               [n["cosine"] for n in saved], atol=1e-6)
+
+
+@pytest.mark.skipif(os.getenv("EARLYBIRD_TEST_DATABASE") != "1",
+                    reason="Set EARLYBIRD_TEST_DATABASE=1 with the project database running")
+def test_live_neighbor_scores_match_the_saved_embedding_geometry():
+    from earlybird.database import Database
+    from earlybird.pipeline import load_bundle
+    data = load_bundle()["datasets"]["reviewed"]
+    db = Database()
+    try:
+        for clause in ["R02.a", "R29.a"]:
+            live = db.nearest(data["fingerprint"], clause)
+            saved = data["neighbors"][clause]
+            assert [n["id"] for n in live] == [n["id"] for n in saved]
+            np.testing.assert_allclose([n["cosine"] for n in live],
+                                       [n["cosine"] for n in saved], atol=1e-6)
+    finally:
+        db.close()

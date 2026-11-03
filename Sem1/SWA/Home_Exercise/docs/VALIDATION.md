@@ -19,3 +19,9 @@ The discovery preview is saved in `docs/screenshots/discover.png`. Test commands
 The source PDF SHA-256 is `a48fb03c232777c7db22d76b0f5f0f63cecf4868acdb29014987978e8c1b54eb`. The selected architecture inspection run is `a983874ded32c47593dd23c6`.
 
 These checks validate the analysis tool and its evidence trail. The business scenarios are architecture walkthroughs; a production ordering service, payment processor, SMS gateway, and route optimizer have not been implemented.
+
+## Presentation preparation, 3 November 2026
+
+All six read-only statements in `db/presentation.cypher` were executed against the local database. The vector index was ONLINE with 768 dimensions and COSINE similarity, the sample requirement had 768 stored values, and the seven candidate groups had the expected sizes: 7, 10, 4, 2, 8, 7, 5.
+
+The live-neighbor display was corrected to convert Neo4j's rescaled similarity to the raw cosine convention used by the saved NumPy results. The verification example was refreshed from the live database; clustering memberships and metrics were not changed. Nine tests passed with `EARLYBIRD_TEST_DATABASE=1`, including comparisons of live and saved neighbor IDs and scores for two requirements.

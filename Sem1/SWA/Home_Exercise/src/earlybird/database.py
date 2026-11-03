@@ -96,7 +96,9 @@ class Database:
     def nearest(self, fingerprint, item_id, limit=6):
         # Exact similarity on this tiny corpus also avoids ANN filtering losses.
         # The populated vector index is independently exposed for inspection.
+        # Neo4j returns (1 + cosine) / 2. Convert to raw cosine [-1, 1]
+        # so live and saved NumPy neighbors use the same displayed scale.
         return self.query("""MATCH (q:EBRequirement {embedding_set:$fingerprint, item_id:$id})
           MATCH (r:EBRequirement {embedding_set:$fingerprint}) WHERE r <> q
-          RETURN r.item_id AS id, vector.similarity.cosine(q.embedding,r.embedding) AS cosine
+          RETURN r.item_id AS id, 2.0 * vector.similarity.cosine(q.embedding,r.embedding) - 1.0 AS cosine
           ORDER BY cosine DESC LIMIT $limit""", fingerprint=fingerprint, id=item_id, limit=limit)
