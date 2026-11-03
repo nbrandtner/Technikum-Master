@@ -2,6 +2,8 @@
 
 A local, free architecture investigation for the EarlyBird home exercise. Python generates sentence embeddings; Neo4j stores and indexes them and runs GDS K-Means; Streamlit presents the evidence and the reviewed architecture.
 
+**Moving to a laptop?** Follow the [Windows laptop setup guide](docs/LAPTOP_SETUP.md). It explains what to copy, how to create a fresh Python environment, and how saved dashboard results differ from the Docker database stored on the home PC.
+
 ## Open the dashboard
 
 On this machine, the project environment is already prepared. From PowerShell in this folder:
