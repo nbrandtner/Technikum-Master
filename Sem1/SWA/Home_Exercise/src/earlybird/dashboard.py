@@ -13,7 +13,22 @@ from earlybird.analysis import consensus
 from earlybird.data import DATA, ROOT, load_clauses, load_sources, read_json
 from earlybird.pipeline import load_bundle
 
-COLORS = ["#b65f26", "#32746c", "#68549a", "#b84960", "#63802e", "#397ca2", "#a67c26", "#96536e", "#55717b", "#755f4b"]
+BACKGROUND = "#10161d"
+SURFACE = "#1a232e"
+TEXT = "#e7edf3"
+MUTED = "#b4c0cd"
+BORDER = "#334354"
+COLORS = ["#f0ab70", "#64c7b4", "#b8a0ec", "#ee91a7", "#adca74", "#79b9e6", "#e1c36b", "#d3a0c2", "#83c5d0", "#cbb49d"]
+
+
+def dark_plot(fig):
+    """Keep labels, tooltips, and grid lines readable on the dark app surface."""
+    fig.update_layout(template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)",
+                      plot_bgcolor="rgba(0,0,0,0)", font_color=TEXT,
+                      hoverlabel=dict(bgcolor=SURFACE, font_color=TEXT, bordercolor=BORDER))
+    fig.update_xaxes(gridcolor=BORDER, zerolinecolor=BORDER)
+    fig.update_yaxes(gridcolor=BORDER, zerolinecolor=BORDER)
+    return fig
 
 
 def style():
@@ -22,14 +37,16 @@ def style():
     h1,h2,h3 {font-family:Georgia,'Times New Roman',serif; letter-spacing:-.035em;}
     h1 {font-size:3rem !important; font-weight:500 !important;}
     h2 {font-size:2rem !important;}
-    [data-testid=stSidebar] {border-right:1px solid #dfdbd2;}
-    [data-testid=stMetric] {background:#f0ece3; padding:.7rem 1rem; border-radius:12px;}
-    .eyebrow {font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#8a6546;}
-    .intro {font-size:1.12rem; color:#59635e; max-width:780px; line-height:1.6;}
-    .source-card {padding:1rem 1.25rem; border-left:3px solid #b65f26; background:#f0ece3; border-radius:0 10px 10px 0;}
-    .small-note {font-size:.83rem; color:#6e756e;}
-    .component {padding:1rem 1.2rem; border-radius:12px; background:#fffdf8; border:1px solid #ded9cd; margin-bottom:1rem;}
+    [data-testid=stSidebar] {border-right:1px solid #334354;}
+    [data-testid=stMetric] {background:#1a232e; padding:.7rem 1rem; border-radius:12px;}
+    .eyebrow {font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#f0ab70;}
+    .intro {font-size:1.12rem; color:#b4c0cd; max-width:780px; line-height:1.6;}
+    .source-card {padding:1rem 1.25rem; color:#e7edf3; border-left:3px solid #f0ab70; background:#1a232e; border-radius:0 10px 10px 0;}
+    .small-note {font-size:.83rem; color:#b4c0cd;}
+    .component {padding:1rem 1.2rem; color:#e7edf3; border-radius:12px; background:#1a232e; border:1px solid #334354; margin-bottom:1rem;}
     .component h3 {margin-top:.2rem; margin-bottom:.5rem;}
+    [data-testid=stAlertContentInfo] [data-testid=stMarkdownContainer] {color:#c4ddff;}
+    [data-testid=stSliderThumbValue] [data-testid=stMarkdownContainer] {color:#f0ab70;}
     div.stButton>button {border-radius:8px;}
     </style>""", unsafe_allow_html=True)
 
@@ -108,12 +125,12 @@ def discover(bundle, live_db):
         fig = px.scatter(frame, x="PCA 1", y="PCA 2", color="Cluster", text="id" if show_labels else None,
                          custom_data=["id"], hover_name="id", hover_data={"Requirement": True},
                          color_discrete_map=palette)
-        fig.update_traces(marker={"size": 13, "line": {"width": 1, "color": "#faf8f2"}},
+        fig.update_traces(marker={"size": 13, "line": {"width": 1, "color": BACKGROUND}},
                           textposition="top center", textfont={"size": 10})
         fig.update_layout(height=500, paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                           margin={"l": 10, "r": 10, "t": 15, "b": 10}, legend={"orientation": "h"},
-                          font={"color": "#252d2b"}, uirevision=name)
-        selected = st.plotly_chart(fig, key=f"map-{name}", on_select="rerun", selection_mode="points",
+                          font={"color": TEXT}, uirevision=name)
+        selected = st.plotly_chart(dark_plot(fig), key=f"map-{name}", on_select="rerun", selection_mode="points",
                                  width="stretch", alt="Requirement clusters on a fixed PCA projection. Select a clause to inspect its source.")
         st.caption(f"PCA retains {sum(data['pca_variance']):.1%} of variance in two dimensions. Clustering uses all embedding dimensions. Cluster numbers and colors are local to a run.")
     with right:
@@ -153,23 +170,23 @@ def stability(bundle):
         fig = px.line(summary, x="k", y="mean_silhouette", markers=True,
                       labels={"k": "Number of clusters", "mean_silhouette": "Mean Euclidean silhouette"})
         fig.update_traces(line_color=COLORS[0])
-        st.plotly_chart(fig, width="stretch")
+        st.plotly_chart(dark_plot(fig), width="stretch")
     with right:
         fig = px.line(summary, x="k", y="seed_agreement", markers=True,
                       labels={"k": "Number of clusters", "seed_agreement": "Mean seed agreement · ARI"})
         fig.update_traces(line_color=COLORS[1])
-        st.plotly_chart(fig, width="stretch")
+        st.plotly_chart(dark_plot(fig), width="stretch")
     k = st.select_slider("Inspect consensus at k", options=summary["k"].tolist(), value=data["suggested_k"])
     runs = [r for r in data["runs"] if r["k"] == k]
     matrix = consensus(runs)
     order = np.argsort(runs[0]["labels"], kind="stable")
     ids = [runs[0]["ids"][i] for i in order]
     fig = go.Figure(go.Heatmap(z=matrix[np.ix_(order, order)], x=ids, y=ids, zmin=0, zmax=1,
-                              colorscale=[[0, "#faf8f2"], [1, "#32746c"]],
+                              colorscale=[[0, "#17212b"], [1, "#64c7b4"]],
                               colorbar={"title": "Together"},
                               hovertemplate="%{x} + %{y}<br>Together in %{z:.0%} of seeds<extra></extra>"))
     fig.update_layout(height=620, margin={"t": 10, "b": 50})
-    st.plotly_chart(fig, width="stretch")
+    st.plotly_chart(dark_plot(fig), width="stretch")
     st.caption(f"Observed co-assignment across {len(runs)} runs at the same k. This is stability evidence, not a confidence probability.")
     st.markdown("### One clause, different words")
     if not bundle["paraphrases"]:
@@ -187,11 +204,14 @@ def stability(bundle):
 
 def architecture_graph(architecture, active=None):
     active = set(active or [])
-    rows = ['digraph { rankdir=TB; bgcolor="transparent"; nodesep=0.6; ranksep=0.6; node [shape=box, style="rounded,filled", fontname="Arial", fontsize=13, margin="0.2,0.15"]; edge [color="#a6aaa2", fontname="Arial", fontsize=11];']
-    for component in architecture["components"]:
+    rows = ['digraph { rankdir=TB; bgcolor="transparent"; nodesep=0.6; ranksep=0.6; node [shape=box, style="rounded,filled", fontname="Arial", fontsize=13, margin="0.2,0.15"]; edge [color="#91a3b5", fontcolor="#b4c0cd", fontname="Arial", fontsize=11];']
+    for i, component in enumerate(architecture["components"]):
         key = component["id"]
-        color = component["color"] if not active or key in active else "#dddcd4"
-        rows.append(f'"{key}" [label="{component["name"]}", fillcolor="{color}", fontcolor="white"];')
+        highlighted = not active or key in active
+        color = COLORS[i % len(COLORS)] if highlighted else BORDER
+        fill = SURFACE if highlighted else BACKGROUND
+        text = TEXT if highlighted else MUTED
+        rows.append(f'"{key}" [label="{component["name"]}", fillcolor="{fill}", color="{color}", penwidth=2, fontcolor="{text}"];')
     for dep in architecture["dependencies"]:
         rows.append(f'"{dep["from"]}" -> "{dep["to"]}" [label="{dep["label"]}"];')
     rows.append('}')
@@ -222,7 +242,7 @@ def inspect_architecture(bundle):
     cols = st.columns(2, gap="large")
     for i, component in enumerate(architecture["components"]):
         with cols[i % 2]:
-            st.markdown(f'<div class="component" style="border-top:4px solid {component["color"]}"><span class="eyebrow">{escape(component["scope"])}</span><h3>{escape(component["name"])}</h3>{escape(component["responsibility"])}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="component" style="border-top:4px solid {COLORS[i % len(COLORS)]}"><span class="eyebrow">{escape(component["scope"])}</span><h3>{escape(component["name"])}</h3>{escape(component["responsibility"])}</div>', unsafe_allow_html=True)
             with st.expander("Ownership, operations, and source clauses"):
                 st.write("**Owns:** " + component["owns"])
                 st.write("**Offers:** " + "; ".join(component["operations"]))

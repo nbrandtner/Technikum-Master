@@ -1,12 +1,12 @@
 # QuestQueue – AI-Einsatz im Requirements Engineering
 
 Projektphase: Phase 1 – Produktspezifikation
-Stand: 05.11.2026
+Stand: 05.11.2026 · Version 1.0
 Eingesetztes Werkzeug: ChatGPT / Codex
 
 ## 1. Zielsetzung
 
-AI wurde eingesetzt, um die Projektidee von QuestQueue zu strukturieren, Anforderungen abzuleiten, einen realistischen MVP vorzuschlagen und den Entwurf auf Widersprüche und Unklarheiten zu prüfen. Zusätzlich unterstützte AI den Vergleich technischer Optionen und die Dokumentation offener Entscheidungen.
+AI unterstützte die Strukturierung der Projektidee, die Ableitung überprüfbarer Anforderungen, die MVP-Abgrenzung und die Konsistenzprüfung. Ein weiterer Einsatzbereich war der Vergleich technischer Optionen und externer Datenquellen.
 
 Die Dokumentation gliedert den AI-Einsatz nach Zielsetzung, Prompt, Ergebnis und kritischer Bewertung. Sie zeigt die Beiträge zur Anforderungsanalyse, Priorisierung, Qualitätsprüfung und Bewertung technischer Optionen.
 
@@ -46,11 +46,11 @@ Aus der vollständigen Produktvision einen im Semester realistisch umsetzbaren K
 
 ### Ergebnis und Bewertung
 
-Der Entwurf unterscheidet elf Must-, sieben Should- und eine Could-Story. Der vorgeschlagene Kern umfasst Spielübersichten, Präferenzprofile, beide Taste-Varianten, eigene Empfehlungen und den Auswahlbutton sowie die dafür erforderliche Datenbasis und unterstützende Funktionen.
+Die Spezifikation unterscheidet elf Must-, sieben Should- und eine Could-Story. Der MVP umfasst Spielübersichten, Präferenzprofile, beide Taste-Varianten, eigene Empfehlungen und den Auswahlbutton sowie Datenversorgung, Anmeldung, Fehlerbehandlung, Löschung und Demonstration.
 
-Dashboard, externe Empfehlungen, Feedback, Verlauf, Wiederentdeckung, Tags und Filter bleiben als priorisierte Erweiterungen enthalten. Zeitgesteuerte Aktualisierung ist als optionale Erweiterung geführt. Ein zusätzlicher persistenter Merkzettel wurde nicht als Pflichtfunktion übernommen, weil er aus der Featureliste nicht hervorgeht.
+Dashboard, externe Empfehlungen, Feedback, Verlauf, Wiederentdeckung, Tags und Filter wurden als Should-Funktionen vom MVP getrennt. Zeitgesteuerte Aktualisierung wurde als Could eingestuft. Zusätzliche Funktionen ohne Beitrag zum Hauptanwendungsfall wurden nicht in den Pflichtumfang übernommen.
 
-Die Priorisierung ist weiterhin ein Reviewvorschlag. Ihre Umsetzbarkeit muss mit dem tatsächlichen Semesterbudget abgeglichen werden. Auch Should-Funktionen gehören zur Produktvision; ihre Einstufung bedeutet keine ersatzlose Streichung.
+Die kritische Prüfung zeigte, dass die Anzahl der Must-Stories allein den Aufwand nicht angemessen beschreibt: Mehrere Stories sichern denselben Kernablauf ab, während zusätzliche Empfehlungsbereiche eigenständige Erweiterungen bilden. Für zwei Personen und die Implementierungsabgabe am 09.12.2026 wurden daher ein früher Integrationsnachweis und der Vorrang des MVP vor Erweiterungen festgehalten. Die Aufwandseinschätzung wird anhand dieses Nachweises überprüft.
 
 ## 4. Anwendung C: Konsistenz- und Qualitätsprüfung
 
@@ -75,24 +75,24 @@ Widersprüche, fehlende Datenannahmen und nicht überprüfbare Aussagen vor der 
 
 ### Ergebnisse und übernommene Präzisierungen
 
-| Prüfpunkt                  | Präzisierung im Entwurf                                      |
+| Prüfpunkt                  | Übernommene Präzisierung                                      |
 | -------------------------- | ------------------------------------------------------------ |
 | Unbekannte Spielzeit       | Fehlende Werte gelten nicht als ungespielt; dafür sind explizite 0 Minuten erforderlich. |
 | Aussagekraft von Spielzeit | Minuten werden als implizites Interessenssignal behandelt, nicht als sichere positive Bewertung. |
 | Letzte Aktivität           | Eine Liste kürzlich aktiver Spiele belegt ohne Zeitpunkte keine genaue zeitliche Reihenfolge. |
 | Zeitverlauf                | Snapshots liefern beobachtete Intervalländerungen seit Erfassungsbeginn, keine rückwirkende Sitzungshistorie. |
-| Tags und Empfehlungen      | Ausschlüsse haben Vorrang vor positiven Signalen; genaue Verstärkungen benötigen eine dokumentierte Regel. |
+| Tags und Empfehlungen      | Ausschlüsse haben Vorrang vor positiven Signalen; Loved It verstärkt zulässige Referenzen, Like entscheidet Gleichstände im externen Bereich. |
 | Kontodaten                 | Abmeldung beendet den Zugriff, während bestätigte Löschung persönliche Daten entfernt. Ein Kontowechsel darf keine fremden Daten offenlegen oder löschen. |
 | Cache                      | Allgemeine Spielmerkmale werden von persönlichen Bibliotheken, Bewertungen und Snapshots getrennt. |
 | Technische Machbarkeit     | Sichtbarkeit, Antwortfelder, Anmeldung und Metadatenzuordnung werden in einem frühen Spike geprüft. |
 
 Die Prüfung verbessert die innere Konsistenz. Sie ersetzt weder einen unabhängigen Review noch Tests der späteren Anwendung. Weil dieselbe AI an Entwurf und Prüfung beteiligt ist, können Annahmen trotz Selbstprüfung bestehen bleiben.
 
-## 5. Anwendung D: Technische Optionen und offene Entscheidungen bewerten
+## 5. Anwendung D: Technische Optionen bewerten
 
 ### Ziel
 
-Technische Möglichkeiten anhand der Anforderungen vergleichen und ausgewählte Rahmenbedingungen von noch offenen Detailentscheidungen trennen.
+Technische Möglichkeiten anhand der Anforderungen vergleichen, einen geeigneten Integrationsansatz bestimmen und verbleibende Risiken erfassen.
 
 ### Prompt
 
@@ -106,18 +106,18 @@ Technische Möglichkeiten anhand der Anforderungen vergleichen und ausgewählte 
 
 ### Ergebnis und Bewertung
 
-Der gewählte technische Rahmen wurde in die Dokumentation übernommen. Steam OpenID ist für die Identitätsprüfung vorgesehen; die Sichtbarkeit von Spieldaten bleibt eine separate Voraussetzung. Metadaten sollen über eine zusätzliche API bezogen und in PostgreSQL wiederverwendet werden. IGDB ist ein zu prüfender Kandidat.
+Der technische Rahmen verbindet Steam OpenID für die Identitätsprüfung, die Steam Web API für persönliche Spieldaten und IGDB für allgemeine Metadaten mit PostgreSQL-Cache. Die Sichtbarkeit der Steam-Daten bleibt eine separate Voraussetzung. Die dokumentierte Unterstützung für externe Spielkennungen und lokales Caching begründet die Auswahl von IGDB; der tatsächliche Zugriff und die Abdeckung werden im Phase-2-Integrationsnachweis geprüft.
 
-Als erste Empfehlungsrichtung wurde ein erklärbares inhaltsbasiertes Verfahren vorgeschlagen. Für die Aktualisierung wurde ein manueller Refresh in Kombination mit einer Aktualisierung veralteter Daten bei Anmeldung beschrieben. Regelmäßige Erfassung bleibt eine mögliche Ergänzung. Konkrete Gewichtungen, Schwellenwerte, Cache-Gültigkeit und Anbieter sind noch nicht verbindlich festgelegt.
+Als Empfehlungsmethode wurde eine erklärbare genre- und minutenbasierte Baseline gewählt. Sie benötigt keine Trainingsdaten und besitzt feste Akzeptanzbeispiele für Profilgewichte und Rangfolgen. Manueller Refresh und anmeldebezogene Aktualisierung ab 24 Stunden Datenalter wurden kombiniert; Mindestabstand und Cache-Gültigkeit sind als Produktregeln definiert. Embeddings, kollaborative Verfahren und periodische Erfassung wurden wegen des zusätzlichen Aufwands nicht in den MVP aufgenommen.
 
-Diese Trennung verhindert, dass plausible AI-Vorschläge unbemerkt zu freigegebenen Anforderungen werden. Die Eignung einer Datenquelle ist erst nach einem praktischen Zugriffstest und einer Prüfung ihrer Nutzungsbedingungen ausreichend abgesichert.
+Die kritische Bewertung trennte dokumentierte Schnittstellenfähigkeiten von Annahmen über reale Datenabdeckung. Ein plausibler Technologievergleich genügt nicht als Integrationsnachweis. Deshalb enthält die Spezifikation eine Bibliotheksstichprobe, eindeutige Zuordnungsregeln und einen Prüfplan für Cache- und Fehlerverhalten. Die Relevanz des Rankings bleibt zusätzlich qualitativ zu bewerten.
 
 ## 6. Quellen, Grenzen und Verantwortlichkeit
 
-Für technische Abhängigkeiten wurden offizielle Unterlagen von Valve, IGDB und FastAPI herangezogen. Die Links stehen in [requirements.md, Abschnitt 10](requirements.md#10-quellen). Die Recherche ist kein Nachweis eines erfolgreichen Live-Imports oder einer bereits funktionierenden Integration.
+Die technische Bewertung stützt sich auf die in [requirements.md, Abschnitt 10](requirements.md#10-quellen) aufgeführten Quellen. Anbieterinformationen wurden für Zugangsbedingungen und Schnittstellen verwendet; Berechnungsregeln und Produktgrenzen wurden projektspezifisch festgelegt.
 
 Es wurden in dieser Phase keine Nutzerinterviews, Laufzeitmessungen oder authentifizierten Live-API-Tests durchgeführt. Dokumentstruktur, Dateiverweise und Anforderungszuordnungen wurden geprüft. Vertrauliche Zugangsdaten wurden nicht in die AI-Eingaben aufgenommen.
 
 AI war besonders hilfreich bei der Strukturierung der Featureliste, der Formulierung von Grenzfällen und dem Vergleich von Alternativen. Grenzen zeigten sich bei ergänzten Annahmen, vorzeitigen technischen Festlegungen und scheinbar plausiblen Aussagen über verfügbare Daten. Die Ergebnisse müssen deshalb fachlich geprüft und durch spätere Integrations- und Akzeptanztests abgesichert werden.
 
-Die endgültige Verantwortung für Prioritäten, Scope, technische Entscheidungen und Abgabeinhalte liegt bei den Studierenden. Vor der Freigabe bleiben insbesondere die Empfehlungsregeln, Aktualisierungspolitik, Metadatenquelle und realistische Semesterplanung zu konkretisieren.
+Die Verantwortung für Anforderungen, Prioritäten, technische Entscheidungen und Abgabeinhalte liegt bei den Studierenden. Die festgelegten Regeln dienen als Grundlage für Architektur und Implementierung. Integrationsnachweise, Akzeptanztests und freiwilliges Nutzwertfeedback überprüfen sie in den folgenden Projektphasen.

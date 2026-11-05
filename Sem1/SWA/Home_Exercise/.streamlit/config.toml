@@ -1,8 +1,14 @@
 [theme]
+base = "dark"
 primaryColor = "#b65f26"
-backgroundColor = "#faf8f2"
-secondaryBackgroundColor = "#f0ece3"
-textColor = "#252d2b"
+backgroundColor = "#10161d"
+secondaryBackgroundColor = "#1a232e"
+textColor = "#e7edf3"
+linkColor = "#f0ab70"
+borderColor = "#334354"
+codeBackgroundColor = "#17212b"
+codeTextColor = "#e7edf3"
+dataframeHeaderBackgroundColor = "#243140"
 font = "sans serif"
 
 [server]

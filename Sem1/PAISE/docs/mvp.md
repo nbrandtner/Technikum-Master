@@ -1,22 +1,18 @@
 # QuestQueue – MVP-Scope
 
-Stand: 05.11.2026 · Version 0.3 · Reviewentwurf
+Stand: 05.11.2026 · Version 1.0 · Phase 1 – Project Definition & Requirements
 
-## 1. Ziel und vereinbarter technischer Rahmen
+## 1. Ziel und technischer Rahmen
 
-Der vollständige Kernablauf lautet: **Steam-Anmeldung → eigener Datenimport → API-Metadaten mit Cache → Spielübersicht → Präferenzprofil → Current Taste oder All-Time Taste → begründeter Spielvorschlag**. „What should I play?“ wählt einen Titel aus derselben Rangfolge wie die Empfehlungsansicht.
+Der MVP unterstützt einen vollständigen Anwendungsfall: **Steam-Anmeldung → eigener Datenimport → Metadatenanreicherung → Spielübersicht → Profilwahl → begründeter Vorschlag für ein eigenes ungespieltes Spiel**. Der Button „What should I play?“ liefert den bestgereihten Titel derselben Empfehlungsansicht.
 
-Der Nutzer hat Webapp, lokale Entwicklung, Steam Sign-In, Python/FastAPI, Vue/TypeScript, PostgreSQL und API plus Metadaten-Cache gewählt. Im ersten Stand laufen Frontend, Backend und Datenbank lokal. Steam-Anmeldung und frische externe Daten benötigen weiterhin eine Internetverbindung.
-
-Lokale Entwicklung legt weder einen späteren Hostinganbieter noch eine pauschale Ein-Nutzer-Grenze fest. Daten verschiedener verifizierter Steam-Konten müssen getrennt bleiben. Zielgröße für gleichzeitige Nutzung, öffentlicher Betrieb und Hostingbudget sind noch offen.
-
-Die vollständige Liste mit 13 Features bleibt in der Produktspezifikation. Prioritäten und genaue Produktgrenzen sind weiterhin ein Vorschlag für die Semesterplanung.
+Frontend, Backend und PostgreSQL laufen lokal. Die Anwendung verwendet Vue/TypeScript, Python/FastAPI, Steam OpenID, die Steam Web API und IGDB. Persönliche Daten verschiedener Steam-Konten bleiben getrennt; allgemeine Metadaten werden kontenübergreifend gecacht. Steam-Anmeldung und externe Datenabrufe benötigen Internetzugang.
 
 ## 2. Enthaltene Must-Funktionen
 
 | Umfang | Anforderungen |
 | --- | --- |
-| Letzte Aktivität mit Zeitpunkten oder ehrlich beschriftetem Aktivitäts-Fallback | US-01 / F-01 |
+| Letzte Aktivität mit Zeitpunkten oder gekennzeichneten kürzlichen Aktivitäten ohne genaue Reihenfolge | US-01 / F-01 |
 | Meistgespielte Titel, Bibliothek und Ungespielt-Filter | US-02 / F-02 |
 | Präferenzprofil und verständliche Zusammenfassung | US-03 / F-03 |
 | Höchstens fünf begründete Empfehlungen eigener ungespielter Titel | US-05 / F-05 |
@@ -28,86 +24,89 @@ Die vollständige Liste mit 13 Features bleibt in der Produktspezifikation. Prio
 | Getrennter offline nutzbarer Demomodus ohne Kontodatenzugriff | US-17 / F-17 |
 | Zusätzliche API-Metadaten mit eindeutiger AppID-Zuordnung und PostgreSQL-Cache | US-19 / F-19 |
 
-N-01 bis N-07 gelten zusätzlich. Abmelden und persönliche Daten löschen sind verschiedene Vorgänge: Nach Abmeldung bleiben die gespeicherten Daten erhalten; die Sitzung darf sie aber nicht mehr lesen. Ein anderes Konto erhält seinen eigenen Bestand. Der allgemeine Metadaten-Cache kann kontenübergreifend genutzt werden, darf aber keine privaten Profilantworten enthalten.
+Zusätzlich gelten N-01 bis N-07. Die Oberfläche beschränkt sich auf Spielübersichten, eine einfache Profilzusammenfassung und die begründete Auswahl. Das grafische Dashboard ist kein Bestandteil des MVP.
 
-Der frühere Live-Katalog mit einer Mindestgröße von 30 manuell gepflegten Spielen ist kein Produktziel mehr. Für Offline-Demo und Tests bleibt ein fester Beispieldatensatz sinnvoll. Im Live-Produkt kommen Merkmale aus der ausgewählten API und ihrem Cache; Abdeckung und Datenalter werden angezeigt.
+## 3. Produktentscheidungen und Umfangsbegründung
 
-## 3. Noch offene Entscheidungen
-
-| Entscheidung | Status | Vorschlag für den nächsten Review |
+| Bereich | Festlegung | Begründung |
 | --- | --- | --- |
-| Empfehlungsmethode und Profilgewichtung | Offen | Erklärbare inhaltsbasierte Baseline; Embeddings später mit festem Testbestand vergleichen |
-| Refresh-Auslöser und Intervalle | Offen | Manueller Refresh plus Aktualisierung veralteter Daten bei Anmeldung; Automatik separat abwägen |
-| Metadatenanbieter und erlaubte Speicherung | Noch zu prüfen | IGDB im Spike auf Merkmale, Steam-Zuordnung, Zugangsbedingungen und Cache-Nutzung prüfen |
-| Cache-Gültigkeit und Abfrageabstände | Offen | Allgemeine Metadaten getrennt von persönlichen Spielzeiten behandeln |
-| Spätere Veröffentlichung und Mehrbenutzer-Zielgröße | Offen | Zunächst lokale Demo; Kontotrennung bereits umsetzen |
+| Empfehlung | Genrebasierte inhaltsbasierte Baseline v1; Regeln und Akzeptanzbeispiel in requirements.md, Abschnitt 5 | Nachvollziehbare Ergebnisse ohne Trainingsdaten oder laufende Modellkosten |
+| Persönliche Daten | Bewusst gestarteter Erstimport; anschließend manueller Refresh und Aktualisierung bei Anmeldung ab 24 Stunden Datenalter | Kontrollierte Datenübernahme und aktueller Stand beim Einstieg |
+| Abfragebegrenzung | Mindestens 60 Sekunden zwischen Importstarts je Konto; höchstens ein laufender Import je Konto | Vermeidung mehrfacher gleichzeitiger Abrufe |
+| Metadaten | IGDB mit PostgreSQL-Cache; sieben Tage Frische; ältere Daten gekennzeichnet weiterverwenden | Geringere Abhängigkeit von einzelnen Anbieterabrufen |
+| Betrieb | Lokale Demonstration; 0 Euro Budget für zusätzliche laufende Dienste | Begrenzung des Betriebsaufwands innerhalb des Semesterprojekts |
 
-Die Vorschläge sind keine neuen Nutzerentscheidungen. Es ist weder eine feste Scoreformel noch ein täglicher Refresh oder eine konkrete Cache-TTL freigegeben. Methodenwahl und Aktualisierungsregeln müssen vor Implementierung des betreffenden Verhaltens dokumentiert werden.
+Die elf Must-Stories decken sechs sichtbare Produktfunktionen, die erforderliche Metadatenversorgung und vier unterstützende Funktionen für Anmeldung/Import, Fehlerbehandlung, Datenkontrolle und Demonstration ab. Jede davon trägt zum vollständigen Kernablauf oder seiner überprüfbaren Zuverlässigkeit bei.
 
-Die Anforderungen an belegbare Gründe, getrennte Profile, Kandidatenausschlüsse und identische Rangfolge zwischen Liste und Button bleiben unabhängig von der Methodenwahl bestehen. Current Taste soll zunächst verfügbare 14-Tage-Minuten verwenden; dieses Datenfenster ist ein weiter bestehender Reviewvorschlag und keine verdeckte Festlegung des Algorithmus.
+Die größten Aufwandstreiber sind Steam-Anmeldung, Metadatenzuordnung und Kontotrennung. Sie werden in Phase 2 zuerst geprüft. Der API-Prüfplan umfasst etwa 50 reale Bibliotheksspiele und steht in requirements.md, Abschnitt 7. Bei relevanten IGDB-Lücken wird SteamSpy als Alternative bewertet. Ergebnisse und notwendige Umfangsänderungen werden vor der Implementierung dokumentiert.
 
-## 4. Priorisierte Erweiterungen
+## 4. Priorisierte Erweiterungen und Ausschlüsse
 
-| Funktion aus der Featureliste | Priorität | Abhängigkeiten und erste Grenze |
+| Erweiterung | Priorität | Abhängigkeiten und erste Grenze |
 | --- | --- | --- |
-| Persönliche Tags | Should · US-11 | Vier Tags mit Vorrang für Ausschlüsse; genaue positive Gewichtung mit Methode vereinbaren |
+| Persönliche Tags | Should · US-11 | Vier Tags mit Ausschlussvorrang; Loved It verdoppelt den Referenzbeitrag nach Baseline v1 |
 | Genre-Ausschlussfilter | Should · US-12 | Gemeinsame Kandidatenfilter für Listen und Button; keine Änderung an gespeicherten Vorlieben |
 | Dashboard | Should · US-04 | Metadaten und Profilbasis; tatsächliche Minuten von Präferenzwerten unterscheiden |
-| Spielzeit im Zeitverlauf | Should · US-08 | Snapshots bei erfolgreichen Imports; Auslöser unabhängig von der Speicherung vereinbaren |
+| Spielzeit im Zeitverlauf | Should · US-08 | Snapshots bei erfolgreichen manuellen oder anmeldebezogenen Imports |
 | Frühere Favoriten wiederentdecken | Should · US-10 | Gespielte Titel mit belegter Pause und explizitem oder kenntlich gemachtem Interessenssignal |
 | Externe Empfehlungen | Should · US-06 | Bestätigte zusätzliche API-/Cache-Kandidaten mit Steam-AppID; Besitzabgrenzung kennzeichnen |
 | Like/Dislike für externe Empfehlungen | Should · US-07 | Erst nach US-06; reversibel, Ausschluss oder positive Bevorzugung |
-| Zeitgesteuerte Erfassung | Could · US-18 | Erst nach US-08 und separater Refresh-Entscheidung; nur mit laufendem Backend/Scheduler |
+| Zeitgesteuerte Erfassung | Could · US-18 | Erst nach US-08; explizit aktivierte Zeitsteuerung bei laufendem Backend |
 
-Ein laufender lokaler Backendprozess kann auch bei geschlossenem Browser Aufgaben ausführen. Bei ausgeschaltetem Rechner entsteht keine Beobachtungshistorie. Es werden keine nachträglichen täglichen Messpunkte aus langen Importintervallen erfunden.
+Should- und Could-Funktionen sind nicht für die MVP-Abnahme erforderlich. Ihre Umsetzung setzt einen vollständig geprüften Kern und verbleibende Kapazität voraus.
 
-Die Reihenfolge ist ein Vorschlag nach Abhängigkeiten. Sollen externe Empfehlungen einschließlich Feedback früher zum Semesterziel gehören, ist dafür Zeit einzuplanen oder ein anderer Ausbau zurückzustellen.
-
-### Außerhalb des derzeit zugesagten Umfangs
-
-Öffentlicher Betrieb mit festem Verfügbarkeitsziel, zusätzliche QuestQueue-Passwortkonten, weitere Spieleplattformen, Social Features, Preise, Rabattalarme, Checkout, Spielinstallation, automatischer Spielstart, Cloud-Synchronisierung und ein vollständig erfasster Steam-Katalog sind nicht zugesagt.
-
-Ein trainiertes Modell oder laufende LLM-Aufrufe sind keine Voraussetzung. Feinere Merkmalsfilter benötigen zuerst verlässliche Metadaten. Ein eigener persistenter Merkzettel ist durch die Featureliste nicht verlangt und kein zusätzliches Must.
+Außerhalb des MVP liegen öffentlicher Hostingbetrieb, weitere Spieleplattformen, Social Features, Preise und Rabattalarme, Kaufabwicklung, Spielinstallation und automatischer Spielstart, Cloud-Synchronisierung sowie eine vollständige Erfassung des Steam-Katalogs. Trainierte Mehrnutzer-Modelle und LLM-Aufrufe zur Laufzeit sind ebenfalls nicht vorgesehen.
 
 ## 5. Vollständiger Demonstrationsfall
 
-1. Die Person öffnet die lokale Webapp und lädt den gekennzeichneten Offline-Demomodus. Der Beispieldatensatz enthält gespielte Referenzen, ungespielte Kandidaten, unterschiedliche aktuelle und langfristige Schwerpunkte sowie fehlende Daten.
-2. Sie prüft Last played und Most played. Fehlende Spielzeit, Zeitpunkte und Metadaten werden nicht erfunden.
-3. Sie öffnet die Profilübersicht und prüft All-Time Taste samt Datenstand und verwendeter Metadatenabdeckung.
-4. Die Liste zeigt bis zu fünf geeignete eigene ungespielte Titel mit belegbaren Gründen.
-5. Der Wechsel auf Current Taste erzeugt im dafür vorgesehenen Testbestand ein anderes Profil und eine andere Spitzenempfehlung.
-6. „What should I play?“ liefert denselben Spitzenkandidaten wie die Liste des gewählten Profils.
-7. Getrennt vom Offline-Fall meldet sich die Person tatsächlich bei Steam an. Verifizierte Identität und Zugriff auf sichtbare Spielinformationen werden separat nachgewiesen.
-8. Der Live-Fall weist API-Metadatenabruf, eindeutige Steam-AppID-Zuordnung und anschließende Cache-Wiederverwendung nach. Eine API-Störung überschreibt keinen vorherigen gültigen Stand.
-9. Nach Abmeldung sind persönliche Daten nicht mehr zugänglich. Nach erneuter Anmeldung desselben Kontos und einem Backendneustart sind sie wieder vorhanden.
-10. Die Person löscht die eigenen Profildaten. Ein zweites Testkonto sowie der allgemeine Metadaten-Cache bleiben unverändert; die gelöschten Daten kehren nach Neustart nicht zurück.
+### Live-Anwendungsfall
 
-Ein erfolgreicher Offline-Test ersetzt weder Steam-Anmeldung noch Live-Import oder Metadatenintegration. Feste Daten für reproduzierbare Rankings werden nach der Methodenwahl mit erwarteten Ergebnissen dokumentiert.
+1. Die Person öffnet QuestQueue und meldet sich über Steam an. Das Backend verifiziert ihre Identität.
+2. Nach Bestätigung des Datenhinweises startet sie den Import. Bibliothek, bekannte Spielzeiten und verfügbare aktuelle Aktivitätsdaten werden dem eigenen Konto zugeordnet.
+3. Das Backend ergänzt zuordenbare Spiele um IGDB-Genres. Die Oberfläche zeigt Importstand, Metadatenabdeckung und etwaige Lücken an.
+4. Die Person prüft zuletzt und meistgespielte Titel und öffnet All-Time Taste mit dessen Genregewichten.
+5. Die Empfehlungsansicht zeigt bis zu fünf passende eigene ungespielte Titel. Jeder Vorschlag nennt Profil, gemeinsames Genre und Referenzspiel.
+6. Bei geeigneten aktuellen Daten wechselt die Person auf Current Taste; Profil, Rangliste und Begründungen folgen dem aktuellen Zeitfenster. Ohne aktuelle Grundlage erscheint der definierte Leerzustand.
+7. „What should I play?“ liefert den Spitzenkandidaten des gewählten Profils.
+8. Ein erneuter Abruf mit gültigem Cache verwendet gespeicherte Metadaten. Bei simuliertem API-Ausfall bleibt der letzte gültige Datenstand erhalten und entsprechend gekennzeichnet.
+9. Abmeldung beendet den Zugriff. Nach erneuter Anmeldung und Backendneustart sind die eigenen Daten weiterhin verfügbar; andere Konten bleiben getrennt.
+10. Bestätigte Profillöschung entfernt die eigenen Daten und beendet die zugehörigen Sitzungen. Nach Neustart bleiben sie gelöscht; ein zweites Testkonto und allgemeine Metadaten bleiben erhalten.
+
+### Reproduzierbare Offline-Demo
+
+Der getrennte Demomodus enthält den festen Akzeptanzbestand aus requirements.md, Abschnitt 5 und die für US-17 erforderlichen Aktivitätszeitpunkte. Er zeigt Spielübersichten, beide Profile, unterschiedliche Spitzenempfehlungen und konsistente Button-Ergebnisse ohne Netzwerkanfrage. „Demodaten“ bleibt sichtbar; persönliche Kontodaten sind nicht zugänglich. Der Live-Anwendungsfall wird separat geprüft.
 
 ## 6. Umsetzungsetappen
 
-| Etappe | Ergebnis | Abnahmepunkt |
-| --- | --- | --- |
-| 1 · Integrations-Spike | Lokaler Steam-Callback, Bibliothek, aktuelle Minuten, Zeitpunkte und Metadaten-API prüfen | Identität, Datenzugriff und eindeutige Zuordnung nachgewiesen |
-| 2 · Offene Entscheidungen schließen | Rankingoptionen vergleichen, Refresh-/Cache-Regeln auswählen | Getroffene und offene Entscheidungen ausdrücklich dokumentiert |
-| 3 · Datenbasis und Übersicht | Kontobezogene PostgreSQL-Daten, Cache, Last/Most played und Fehlerzustände | US-01, US-02, US-14, US-15 und US-19 erfüllt |
-| 4 · Profile und Auswahl | Zwei Profile nach gewählter Methode, eigene Empfehlungen und Button | US-03, US-05, US-09 und US-13 mit festen Erwartungen erfüllt |
-| 5 · Vollständiger MVP | Löschung, getrennte Demo, Startanleitung und Qualitätschecks | US-16, US-17 und N-01 bis N-07 erfüllt |
-| 6 · Gezielter Ausbau | Einzelne Should-Funktionen nach Zeitbudget | Kriterien der jeweils aufgenommenen Story erfüllt |
-| Puffer | Fehlerkorrekturen, freiwilliges Nutzwertfeedback und Dokumentation | Befunde geschlossen oder transparent dokumentiert |
+Das Projektteam besteht aus **zwei Personen**. Die Bearbeitung erfolgt im **Wintersemester 2026/27**. Alle Abgabezeiten beziehen sich auf **Europe/Vienna (Wien)**. Die Arbeitsfenster strukturieren die Bearbeitung zwischen den Abgabeterminen.
 
-Teamgröße, Semestertermine und Stundenbudget sind noch unbekannt. Ein belastbarer Kalenderplan folgt nach deren Klärung. Ein gescheiterter Integrations-Spike führt zu einer ausdrücklichen Scope-Entscheidung; kein stillschweigender Ersatz durch ausschließlich Demo-Daten.
+| Phase | Abgabetermin | Arbeitsfenster | Projektmeilenstein |
+| --- | --- | --- | --- |
+| Phase 1 · Project Definition & Requirements | Montag, 09.11.2026, 17:00 | Bis 09.11.2026 | Vier geforderte Dokumente prüfen und abgeben; Problem, MVP, Anforderungen und AI-Reflexion nachvollziehbar festhalten |
+| Phase 2 · Architecture & Design | Montag, 23.11.2026, 17:00 | 10.–23.11.2026 | Steam-/IGDB-Spike früh durchführen; Architektur, Datenmodell, API-Schnittstellen, Kontotrennung, Cache und UI-Ablauf aus den Anforderungen ableiten |
+| Phase 3 · AI-assisted/driven Implementation | Mittwoch, 09.12.2026, 17:00 | 24.11.–09.12.2026 | Vollständigen MVP implementieren: Anmeldung → Import → Metadaten/Cache → Übersicht → beide Profile → begründete Auswahl; Persistenz, Fehlerzustände, Löschung und Demo einschließen |
+| Phase 4 · Quality Assurance & Testing | Montag, 21.12.2026, 17:00 | 10.–21.12.2026 | Must-Stories und N-01 bis N-07 systematisch prüfen; Integrations-, Zugriffs-, Fehler- und Grenzfälle testen, Befunde beheben und verbleibende Grenzen dokumentieren |
+| Phase 5 · Evaluation & Reflection | Dienstag, 22.12.2026, 23:59 | Evaluation begleitend, Abschluss am 22.12.2026 | Nutzen, Zielerreichung und AI-Unterstützung anhand gesammelter Nachweise bewerten; Reflexion und abschließende Abgabe fertigstellen |
+
+### Arbeitsteilung und Terminabsicherung
+
+Die Arbeit gliedert sich in zwei Bereiche: Backend/Datenimport/Cache und Frontend/Profilansicht/Demo. Schnittstellen, Empfehlungsregeln, Reviews und Abnahme bearbeitet das Team gemeinsam.
+
+- **Phase 2:** Externe Zugänge und Zuordnung zuerst prüfen; anschließend Datenmodell, Schnittstellen und UI-Ablauf festlegen. Den Integrationsaufwand vor Beginn der MVP-Implementierung mit der Teamkapazität abgleichen.
+- **Phase 3:** Zuerst den vollständigen Kernablauf herstellen und anschließend die übrigen Must-Kriterien erfüllen. Internes Fertigstellungsziel ist der 07.12.2026; der 08.–09.12. ist für Integration, Korrekturen und Abgabevorbereitung reserviert.
+- **Phase 4:** Die bereits während der Implementierung begonnenen Tests systematisch vervollständigen, Fehler beheben und Abnahmenachweise dokumentieren. Funktionserweiterungen haben keinen Vorrang vor Qualitätssicherung.
+- **Phase 5:** Fortlaufend gesammelte Entscheidungen, Testergebnisse und Nutzwertbeobachtungen auswerten und die Reflexion bis zur Abschlussabgabe fertigstellen.
 
 ## 7. MVP Definition of Done
 
-- Die gewählte Technik ist eingesetzt; alle elf Must-Stories und N-01 bis N-07 erfüllen ihre Kriterien.
-- Alle 13 gewünschten Features bleiben im Backlog enthalten. Sieben Should-Stories und eine Could-Story sind klar als Erweiterungen markiert.
-- Methode, Profilgewichtung, Score-/Gleichstandsregeln und Erklärungskonzept sind vor Ranking-Abnahme ausgewählt, dokumentiert und mit festen erwarteten Ergebnissen geprüft.
-- Refresh-Auslöser, Cache-Gültigkeit, Abfrageabstände und Löschverhalten bei aktiven Jobs sind vor Abnahme des betreffenden Verhaltens festgelegt.
-- Steam-Anmeldung, eigene Datenzuordnung und Zugriffstrennung sind mit mindestens zwei Konten beziehungsweise eindeutig getrennten Testsitzungen geprüft.
-- Profile, Listen und Button liefern konsistente Ergebnisse; ein fester Testbestand demonstriert unterschiedliche Current-/All-Time-Schwerpunkte.
-- API-Metadatenintegration, Cache-Treffer und Fehlerfälle sind nachgewiesen. Fehlende Zuordnungen und veraltete Stände bleiben sichtbar.
-- Live-Ablauf und vollständige Offline-Demo sind getrennt geprüft. Persistenz, Abmeldung, Löschung und Neustart funktionieren.
-- Startanleitung, Konfiguration, Quellen und bekannte Grenzen sind dokumentiert; Zugangsdaten stehen nicht im Repository oder Browser.
+Der MVP ist abnahmefähig, wenn folgende Kriterien erfüllt sind:
 
-Dies sind zukünftige Abnahmekriterien. Phase 1 bleibt bis zum Review der offenen Methoden-, Refresh- und Scope-Fragen ein Entwurf; die Software ist noch nicht implementiert.
+- Alle elf Must-Stories und N-01 bis N-07 erfüllen ihre dokumentierten Kriterien.
+- Baseline v1 liefert die erwarteten Profile, Scores, Rangfolgen und Begründungen des festen Akzeptanzbeispiels.
+- Profilwechsel, Empfehlungslisten und Button verwenden konsistente Daten und Auswahlregeln.
+- Steam-Anmeldung, eigener Datenimport und Zugriffstrennung sind mit getrennten Konten beziehungsweise Testsitzungen nachgewiesen.
+- IGDB-Abruf, eindeutige AppID-Zuordnung, Cache-Wiederverwendung und sichtbare Behandlung fehlender Metadaten sind geprüft.
+- Aktualisierungs-, Cooldown- und Cache-Grenzen sowie API-Fehlerfälle bestehen die vorgesehenen Tests.
+- Persistenz, Abmeldung, Datenlöschung und Neustart funktionieren; verspätete persönliche Importergebnisse umgehen keine Abmeldung oder Löschung.
+- Der Live-Anwendungsfall und die getrennte Offline-Demo sind vollständig demonstrierbar.
+- Startanleitung, Konfiguration, externe Quellen und bekannte Einschränkungen sind dokumentiert; Zugangsdaten stehen nicht im Repository oder Browser.

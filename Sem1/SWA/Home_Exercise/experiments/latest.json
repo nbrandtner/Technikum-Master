@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "created_utc": "2026-11-02T19:59:53.524656+00:00",
+  "created_utc": "2026-11-03T17:24:55.047440+00:00",
   "engine": "Neo4j GDS K-Means",
   "model": {
     "model": "sentence-transformers/all-mpnet-base-v2",
@@ -69849,9 +69849,8 @@
       }
     ],
     "persisted_memberships_verified": true,
-    "base_runs": 180,
-    "paraphrase_runs": 120,
     "neighbor_score_convention": "raw cosine [-1,1]; Neo4j values converted via 2*score-1",
-    "neighbor_scores_verified_utc": "2026-11-03T14:30:21.087650+00:00"
+    "base_runs": 180,
+    "paraphrase_runs": 120
   }
 }

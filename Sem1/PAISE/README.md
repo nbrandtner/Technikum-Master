@@ -1,26 +1,38 @@
 # QuestQueue
 
-**Your next adventure awaits.**
+**Your Library, Your new Quest**
 
-QuestQueue hilft Steam-Spieler:innen bei der Frage **„Was soll ich als Nächstes spielen?“** Die Anwendung macht Spielverhalten sichtbar, erstellt ein persönliches Präferenzprofil und empfiehlt passende Spiele aus der eigenen Bibliothek sowie – als Erweiterung – außerhalb des eigenen Bestands. Dabei werden **Current Taste** und **All-Time Taste** unterschieden.
+Stand: 05.11.2026 · Version 1.0 · Phase 1 – Project Definition & Requirements
+
+QuestQueue unterstützt Steam-Spieler:innen bei der Frage **„Was soll ich als Nächstes spielen?“** Die Webanwendung analysiert die eigene Bibliothek und das bisherige Spielverhalten. Sie erstellt ein nachvollziehbares Präferenzprofil und empfiehlt passende ungespielte Titel aus dem eigenen Bestand. Zwei Profile unterscheiden aktuelle Interessen (**Current Taste**) von langfristigen Schwerpunkten (**All-Time Taste**).
 
 ## Problem und Motivation
 
-Große Spielebibliotheken erschweren die Auswahl: Ungespielte Titel gehen unter, frühere Lieblingsspiele werden vergessen und aktuelle Interessen verändern sich. Eine einfache Liste nach Gesamtspielzeit zeigt weder, was gerade interessant ist, noch welche noch unentdeckten Spiele dazu passen.
+Große Spielebibliotheken erschweren die Auswahl: Ungespielte Titel gehen unter, frühere Favoriten werden vergessen und Interessen verändern sich. Eine nach Gesamtspielzeit sortierte Liste zeigt weder aktuelle Vorlieben noch passende unentdeckte Spiele.
 
-QuestQueue verbindet deshalb Spielübersichten, nachvollziehbare Vorlieben und konkrete Vorschläge. Eigene Tags, Bewertungsfeedback und Ausschlussfilter sollen die Empfehlungen später gezielt anpassbar machen. Die Problemhypothese stammt aus der Projektidee; sie ist noch nicht durch Nutzerinterviews bestätigt. Spielzeit ist ein Interessenssignal und kein sicherer Nachweis für Freude, Qualität oder einen Spielabschluss.
+QuestQueue verbindet Spielübersichten, ein persönliches Präferenzprofil und begründete Vorschläge. Der Mehrwert liegt darin, vorhandene Spiele gezielter zu nutzen und die Entscheidung für das nächste Spiel zu erleichtern. Spielzeit dient dabei als Interessenssignal, nicht als Beweis für Zufriedenheit oder einen Spielabschluss.
 
 ## Zielgruppe und Projektziel
 
-Primäre Zielgruppe sind PC-Spieler:innen mit einer Steam-Bibliothek, mehreren ungespielten Titeln und dem Wunsch, ihren Bestand bewusster zu nutzen. Auch Personen, die neue Spiele entdecken oder frühere Favoriten wiederfinden möchten, gehören zur Zielgruppe.
+Die primäre Zielgruppe sind PC-Spieler:innen mit einer Steam-Bibliothek, mehreren ungespielten Titeln und dem Wunsch, ihren Bestand bewusster zu nutzen. Die spätere Produktentwicklung berücksichtigt außerdem das Entdecken neuer Spiele und die Wiederentdeckung früherer Favoriten.
 
-Im Semester entsteht eine Webanwendung, die zunächst lokal entwickelt und demonstriert wird. Der vollständige MVP-Ablauf lautet: über Steam anmelden, den Datenimport starten, zuletzt und meistgespielte Titel ansehen, ein Präferenzprofil aufbauen, Current Taste oder All-Time Taste wählen und über „What should I play?“ einen begründeten Vorschlag aus der eigenen Bibliothek erhalten. Persönliche Daten werden je verifizierter SteamID getrennt gespeichert. Lokale Entwicklung legt weder den späteren Hostinganbieter noch den Umfang eines öffentlichen Mehrbenutzerbetriebs fest.
+Ein Team aus zwei Personen entwickelt QuestQueue im Wintersemester 2026/27. Projektziel ist ein lokal betreibbarer MVP mit einem vollständigen Ablauf von der Steam-Anmeldung bis zum begründeten Spielvorschlag. Die Implementierungsabgabe erfolgt am 09.12.2026; Qualitätssicherung und Evaluation folgen bis 22.12.2026.
+
+## Wichtigste Anwendungsfälle
+
+| Fall | Ablauf und Ergebnis | Anforderungen |
+| --- | --- | --- |
+| UC-01 · Eigenes Spiel auswählen | Über Steam anmelden, Daten importieren, Spielübersicht und Präferenzprofil prüfen und mit „What should I play?“ einen begründeten Vorschlag für ein eigenes ungespieltes Spiel erhalten. | US-01, US-02, US-03, US-05, US-09, US-13, US-14, US-19 |
+| UC-02 · Aktuelle Interessen berücksichtigen | Zwischen All-Time Taste und Current Taste wechseln; Profil, Rangliste und Auswahl passen sich ohne erneuten Import an. Fehlende aktuelle Daten werden angezeigt. | US-03, US-05, US-09, US-13, US-15 |
+| UC-03 · Eigene Daten kontrollieren | Den letzten gültigen Datenstand erkennen, die Sitzung durch Abmeldung beenden oder die eigenen gespeicherten Daten bestätigt löschen. | US-14, US-15, US-16 |
+
+UC-01 bildet den vollständigen Hauptanwendungsfall. Ein getrennter Offline-Demomodus nach US-17 ermöglicht eine reproduzierbare Demonstration mit Beispieldaten.
 
 ## Funktionsübersicht
 
-Alle 13 Punkte der wiedergefundenen Featureliste sind in der Produktspezifikation enthalten. Die Prioritäten sind ein Vorschlag für einen realistischen Semesterumfang; sie sind keine bereits bestätigte Aufwandsschätzung.
+Die Produktvision enthält 13 Funktionen. Der MVP umfasst elf Must-Stories einschließlich Anmeldung, Datenversorgung und Datenkontrolle. Sieben Should-Stories und eine Could-Story bilden den Erweiterungsumfang.
 
-| Gewünschtes Feature | User Story | Priorität / Umfang |
+| Funktion | User Story | Priorität / Umfang |
 | --- | --- | --- |
 | Last played games anzeigen | US-01 | Must / MVP |
 | Most played games anzeigen | US-02 | Must / MVP |
@@ -36,48 +48,40 @@ Alle 13 Punkte der wiedergefundenen Featureliste sind in der Produktspezifikatio
 | Genres und andere Empfehlungseigenschaften ausschließen | US-12 | Should / zunächst Genre-Ausschluss |
 | „What should I play?“ | US-13 | Must / MVP, konkrete Auswahl statt Zufall |
 
-Steam-Anmeldung und Import, Datenqualität, Löschung, API-Metadaten mit Cache und ein getrennter Demomodus sind zusätzliche unterstützende Anforderungen. Eine zeitgesteuerte Aktualisierung ist eine mögliche Erweiterung. Refresh-Auslöser, Intervalle und Cache-Gültigkeit sind noch nicht beschlossen; manuell auslösbarer Import bleibt als überprüfbare Grundfunktion vorgesehen.
-
 ## MVP und Erweiterungen
 
-Der MVP zeigt eine einfache Profilübersicht mit Genregewichten; ein grafisches Analyse-Dashboard ist eine Erweiterung. Current Taste verwendet verfügbare Spielzeit der letzten 14 Tage am Importzeitpunkt, All-Time Taste die verfügbare Gesamtspielzeit. Fehlen aktuelle Daten, wird dies erklärt und nicht stillschweigend durch Gesamtspielzeit ersetzt.
+Der MVP zeigt zuletzt und meistgespielte Titel, eine einfache Profilübersicht und bis zu fünf begründete Empfehlungen eigener ungespielter Spiele. Der Button „What should I play?“ wählt den bestgereihten Titel aus derselben Liste.
 
-Spielmerkmale sollen über eine zusätzliche API bezogen und lokal in PostgreSQL gecacht werden. Anbieter und Steam-AppID-Zuordnung werden in einem frühen Spike geprüft; IGDB ist ein Kandidat. Ein kleiner fester Datensatz dient nur Offline-Demo und Tests, nicht als Begrenzung des Live-Produkts auf 30 Spiele. Metadatenabdeckung und Datenalter bleiben sichtbar. Die Empfehlungsmethode ist noch offen; erklärbares inhaltsbasiertes Ranking ist ein Vorschlag, kein freigegebener Algorithmus.
+Current Taste nutzt verfügbare Spielminuten der letzten 14 Tage zum Importzeitpunkt, All-Time Taste die Gesamtspielzeit. Die inhaltsbasierte Empfehlungsmethode verteilt Referenzspielzeiten auf Genres und vergleicht die daraus entstehenden Profilgewichte mit den Genres der Kandidaten. Die Berechnungsregeln und ein festes Akzeptanzbeispiel stehen in [requirements.md, Abschnitt 5](docs/requirements.md#5-empfehlungsmethode-inhaltsbasierte-baseline-v1).
 
-## Vereinbarte Technik und offene Entscheidungen
+Dashboard, externe Empfehlungen, Feedback, eigener Spielzeitverlauf, Wiederentdeckung, persönliche Tags und Ausschlussfilter gehören zu späteren Erweiterungen. Der MVP beinhaltet keine periodische Hintergrundabfrage und keinen öffentlichen Hostingbetrieb.
 
-| Bereich | Stand |
+## Technischer Rahmen und externe Abhängigkeiten
+
+| Bereich | Festlegung |
 | --- | --- |
-| Plattform | Webapp – vom Nutzer gewählt |
-| Entwicklung | Lokal; spätere Veröffentlichung und Hosting noch offen |
+| Plattform und Betrieb | Webanwendung; Frontend, Backend und Datenbank laufen lokal |
 | Anmeldung | Steam Sign-In über Steam OpenID |
 | Backend | Python + FastAPI |
 | Frontend | Vue + TypeScript |
-| Datenhaltung | PostgreSQL für persönliche Daten und Metadaten-Cache |
-| Metadaten | API plus Cache gewählt; Anbieter noch im Machbarkeitstest |
-| Empfehlungen | Offen; inhaltsbasierte Baseline und Embeddings werden verglichen |
-| Aktualisierung | Offen; manuell, bei Anmeldung oder zeitgesteuert werden bewertet |
+| Datenhaltung | PostgreSQL; persönliche Daten je verifizierter SteamID getrennt |
+| Persönliche Spieldaten | Steam Web API; Zugriff abhängig von der Sichtbarkeit der Spieldaten |
+| Spielmetadaten | IGDB mit lokalem PostgreSQL-Cache |
+| Empfehlung | Genrebasierte inhaltsbasierte Baseline v1 |
+| Aktualisierung | Bewusst gestarteter Erstimport; danach manueller Refresh und Aktualisierung bei Anmeldung ab 24 Stunden Datenalter |
 
-**Lokale Entwicklung bedeutet:** Browser, FastAPI und PostgreSQL laufen auf dem Entwicklungsrechner. Für Steam-Anmeldung und frische externe Daten wird weiterhin eine Internetverbindung benötigt. Die konkrete Entwicklungsumgebung, Bibliotheken und spätere Bereitstellung werden separat festgelegt.
+Steam-Anmeldung und externe Datenabrufe benötigen Internetzugang. IGDB-Metadaten werden sieben Tage als frisch behandelt. Bei fehlenden oder veralteten Einträgen erfolgt die Anreicherung während eines Imports; Lücken und ältere Daten bleiben erkennbar. API-Zugangsdaten verbleiben im Backend.
 
-**Vorschlag zur Diskussion:** Mit erklärbarem inhaltsbasiertem Ranking beginnen; bei Anmeldung nur veraltete Daten aktualisieren und zusätzlich einen manuellen Refresh anbieten. Regelmäßige Snapshots wären später bei laufendem Backend möglich. Weder dieser Ablauf noch konkrete Zeitintervalle sind beschlossen.
+Der Integrationsnachweis in Phase 2 prüft Steam-Zugriff, IGDB-Zuordnung und Genreabdeckung anhand einer Bibliotheksstichprobe. SteamSpy ist eine technische Alternative bei relevanten Metadatenlücken. Für zusätzliche laufende Dienste ist ein Budget von 0 Euro vorgesehen; ein bestehender Entwicklungsrechner und Internetzugang werden vorausgesetzt.
 
-## Name und Branding
+## Name und Positionierung
 
-QuestQueue verbindet die nächste spielerische „Quest“ mit einer geordneten Auswahl möglicher nächster Spiele. Positionierung: **Deine Bibliothek. Dein nächstes Abenteuer.** Der englische Claim ist ein Branding-Vorschlag für den Review. Die Ansprache ist freundlich, direkt und ohne Kaufdruck.
+QuestQueue verbindet die nächste spielerische „Quest“ mit einer geordneten Auswahl möglicher nächster Spiele. Der Claim **Your Library, Your new Quest** stellt den eigenen Bestand und das nächste Spielerlebnis in den Mittelpunkt. QuestQueue ist ein unabhängiges Studienprojekt.
 
-Gestaltungsvorschlag: Marineblau #142033, Türkis #2DD4BF und helles Neutralgrau #F3F4F6; Textkontraste sind separat zu prüfen. Eine Kartenreihe mit hervorgehobenem Spiel kann die nächste Auswahl darstellen. Ein fertiges Logo ist nicht Bestandteil dieser Phase. QuestQueue ist ein unabhängiges Studienprojekt ohne behauptete Verbindung zu Valve.
-
-## Dokumentation und Stand
+## Dokumentation
 
 | Datei | Inhalt |
 | --- | --- |
-| [docs/requirements.md](docs/requirements.md) | Featurezuordnung, User Stories, Prioritäten, Akzeptanzkriterien und Datenregeln |
-| [docs/mvp.md](docs/mvp.md) | MVP, Erweiterungen, Abhängigkeiten, Demo und Umsetzungsetappen |
-| [docs/ai-usage.md](docs/ai-usage.md) | AI-Einsatz, kritische Prüfung und Korrektur anhand der Featureliste |
-
-Stand: 05.11.2026 · Version 0.3 · Phase 1 · Reviewentwurf. Es gibt noch keine implementierte Anwendung. Der technische Rahmen wurde vom Nutzer gewählt; die externe Integration wird durch einen frühen Machbarkeitstest abgesichert.
-
-Gewünschter späterer Projektpfad: F:\Technikum-Master\Sem1\PAISE. README und docs können direkt dort liegen; Anwendungscode folgt in späteren Phasen.
-
-Featureliste und technische Auswahl sind ausdrückliche Nutzerentscheidungen. Prioritäten, genaue Produktregeln, Empfehlungsmethode, Refresh-Verhalten und spätere Hosting-/Mehrbenutzergrenzen bleiben als Reviewvorschläge beziehungsweise offene Entscheidungen gekennzeichnet.
+| [docs/requirements.md](docs/requirements.md) | Begriffe, User Stories, funktionale und nichtfunktionale Anforderungen, Prioritäten, Akzeptanzkriterien und Datenregeln |
+| [docs/mvp.md](docs/mvp.md) | MVP-Abgrenzung, Erweiterungen, Demonstrationsfall, Projektplan und Abnahmekriterien |
+| [docs/ai-usage.md](docs/ai-usage.md) | AI-Anwendungen mit ausgewählten Prompts, Ergebnissen und kritischer Reflexion |
