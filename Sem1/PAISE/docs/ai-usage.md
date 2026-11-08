@@ -42,7 +42,7 @@ Aus der vollständigen Produktvision einen im Semester realistisch umsetzbaren K
 >
 > Der Kernablauf soll von der Anmeldung und Datenübernahme über das Präferenzprofil bis zu einem nachvollziehbaren Spielvorschlag führen. Current Taste und All-Time Taste sollen dabei berücksichtigt werden. Definiere enthaltene und ausgeschlossene Funktionen, einen reproduzierbaren Demonstrationsfall und eine überprüfbare Definition of Done.
 >
-> Behalte sämtliche Features in der Produktvision, auch wenn sie nicht zum ersten MVP gehören. Vermeide zusätzliche Pflichtfunktionen ohne Bezug zur Featureliste. Gib keine festen Kalendertermine oder belastbaren Aufwandsschätzungen vor, solange Teamgröße und Zeitbudget unbekannt sind.
+> Behalte sämtliche Features in der Produktvision, auch wenn sie nicht zum ersten MVP gehören. Vermeide zusätzliche Pflichtfunktionen ohne Bezug zur Featureliste.
 
 ### Ergebnis und Bewertung
 
