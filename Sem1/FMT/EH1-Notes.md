@@ -23,3 +23,5 @@ Existenzsicherung durch:
         - Non Verbal (Körpersprache)
         - Paar Verbal (Betonung)
     - Beziehungseffekt einer Gruppe
+
+Wenn beides davon gegeben ist dann ist es eine attraktive Gruppe -> Zugehörigkeitswunsch -> Hohe Beitragsgemeinschaft
