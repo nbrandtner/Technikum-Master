@@ -2,3 +2,6 @@
 .idea/
 
 **/.idea/
+.venv/
+.cache/
+*.egg-info/
