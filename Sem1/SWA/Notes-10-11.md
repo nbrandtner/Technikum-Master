@@ -5,8 +5,8 @@ Subsysteme
 Notes for next time:
 How do I evaluate and describe an architecture
 ATAM Architecture Tradeoff Analysis Method, for measuring how good architecture is:
-
-- Change Request: percentage of components that dont have to be changed. higher is better ofc
+-> Change Request: percentage of components that dont have to be changed. higher is better ofc
+!!Zu jeder Schnittstelle, 2 Dokumentationen, Implementation-Comments und Interface-Comments
 
 Group Exercise:
 How to measure good Architecture:
@@ -34,3 +34,36 @@ ATAM:
     - 71.4%
 - Märchenschach - Anderes Board, Andere Figuren, Andere Regeln
     - 42.8%
+
+Describe an Interface:
+ISearchProduct: Enter Search Query ("Alle Produkte unter 100ml"->"Champagner oder so")
+Diese Schnittstelle beschreiben für Benutzer, nicht für Programmierer
+
+Description:
+GET Request
+
+- Authentifizierung:
+    - API Key
+- Parameters:
+    - Search String
+- Output:
+    - Result String
+- Search String Structure:
+    - JSON Structure
+        - Contain
+        - !Contain
+        - Calories
+        - Weight
+        - Volume
+        - FoodPreference
+            - Vegetarian, Vegan, Kosher, Halal
+        - Nutrients
+        - Vitamins
+        - Cuisine
+            - Italian, French
+        - Alcohol
+- Output String Structure:
+    - JSON Structure
+        - Result Array with Parameters, Pagination
+
+XXXXXXXXXXXXXXX
